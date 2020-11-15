@@ -1,13 +1,11 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
+import { Segment } from 'semantic-ui-react'
 
 const Header = () => {
     return (
-            <Menu color="grey" size="large">
-                <Menu.Item
-                    name='Rock Paper Scissors'
-                />
-            </Menu>
+            <Segment color="grey" size="large">
+                Play Rock Paper Scissors!
+            </Segment>
     )
 }
 
