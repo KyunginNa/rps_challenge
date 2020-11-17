@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import Computer from './components/Computer'
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Divider } from 'semantic-ui-react'
 
 class App extends Component {
   render() {
@@ -11,14 +11,13 @@ class App extends Component {
       <>
         <Header />
         <Grid columns={2} divided>
-          <Grid.Row>
             <Grid.Column>
-              <Segment><PlayerOne /></Segment>
-            </Grid.Column>
+              <PlayerOne />
+          </Grid.Column>
+          <Divider vertical/>
             <Grid.Column>
-              <Segment><Computer /></Segment>
+              <Computer />
             </Grid.Column>
-          </Grid.Row>
         </Grid>
         <Footer />
       </>
