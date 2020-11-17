@@ -4,25 +4,31 @@ import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import Computer from './components/Computer'
 import ResultMessage from './components/ResultMessage'
-import { Grid, Divider, Segment } from 'semantic-ui-react'
 
 class App extends Component {
+  state = {
+    activeItem: "",
+    goBtn: ""
+  }
+
+  handleClick = (e, { name }) => this.setState({ activeItem: name })
+  onClickHandlerGoBtn = e => this.setState({ goBtn: true })
+
   render() {
     return (
       <>
         <Header />
-        <Grid columns={2} divided>
-            <Grid.Column>
-              <PlayerOne />
-          </Grid.Column>
-          <Divider vertical/>
-            <Grid.Column>
-              <Computer />
-            </Grid.Column>
-        </Grid>
-        <Segment>
-          <ResultMessage />
-        </Segment>
+        <PlayerOne
+          activeItem={this.state.activeItem}
+          handleClick={this.handleClick}
+          onClickHandlerGoBtn={this.onClickHandlerGoBtn}
+          active={this.goBtn}
+        />
+        <Computer
+          activeItem={this.state.activeItem}
+          goBtn={this.state.goBtn}
+        />
+        <ResultMessage />
         <Footer />
       </>
     )

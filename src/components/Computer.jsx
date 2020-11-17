@@ -1,12 +1,19 @@
 import React from 'react'
-import { Header } from 'semantic-ui-react'
+import { Header, Icon } from 'semantic-ui-react'
 
-const Computer = () => {
+const Computer = props => {
+    const activeItem = props.activeItem
+    const goBtn = props.goBtn
+    const rpsArray = ["rock", "paper", "scissors"]
+    const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
     return (
-        <div>
+        <>
             <Header id="computer-header" as="h2" textAlign="center">Computer</Header>
-            <h3 id="computer-pick"></h3>
-        </div>
+            {activeItem && goBtn && (
+                <Icon id="computer-pick" name={`hand ${randomItem} outline`} outline size="massive" color="black" />
+            )}
+
+        </>
     )
 }
 

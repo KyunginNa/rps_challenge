@@ -17,7 +17,7 @@ describe("User can play Rock Paper Scissors", () => {
     });
 
     it("Displays what computer chose", () => {
-      cy.get("#computer-pick").should("not.be.empty");
+      cy.get("#computer-pick").should("be.visible");
     });
 
     it("Displays a result message", () => {

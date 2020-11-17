@@ -1,10 +1,15 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-const GoButton = () => {
+const GoButton = props => {
     return (
-        <Button id="player-go" inverted color='green' size="big">
-            <Button.Content visible>Go!</Button.Content>
+        <Button
+            active={props.goBtn}
+            id="player-go"
+            inverted color='green'
+            size="big"
+            onClick={props.onClickHandlerGoBtn}>
+            <Button.Content>Go!</Button.Content>
         </Button>
     )
 }
