@@ -3,7 +3,7 @@ import { Segment } from 'semantic-ui-react'
 
 const Header = () => {
     return (
-            <Segment color="grey" size="large">
+            <Segment color="grey" size="large" id="header">
                 Play Rock Paper Scissors!
             </Segment>
     )
