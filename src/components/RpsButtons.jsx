@@ -19,7 +19,7 @@ class ButtonExampleToggle extends Component {
                         toggle
                         active={activeItem === "rock"}
                         name="rock"
-                        id="rock"
+                        id="player-rock"
                         onClick={this.handleClick}
                         circular icon
                         inverted>
@@ -31,7 +31,7 @@ class ButtonExampleToggle extends Component {
                         toggle
                         active={activeItem === "paper"}
                         name="paper"
-                        id="paper"
+                        id="player-paper"
                         onClick={this.handleClick}
                         circular icon
                         inverted>
@@ -43,7 +43,7 @@ class ButtonExampleToggle extends Component {
                         toggle
                         active={activeItem === "scissors"}
                         name="scissors"
-                        id="scissors"
+                        id="player-scissors"
                         onClick={this.handleClick}
                         circular icon
                         inverted>

@@ -5,7 +5,7 @@ const Computer = () => {
     return (
         <div>
             <Header id="computer-header" as="h2" textAlign="center">Computer</Header>
-            <h3>Random</h3>
+            <h3 id="computer-pick"></h3>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react'
 
 const GoButton = () => {
     return (
-        <Button inverted color='green' size="big">
+        <Button id="player-go" inverted color='green' size="big">
             <Button.Content visible>Go!</Button.Content>
         </Button>
     )
