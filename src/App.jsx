@@ -8,15 +8,19 @@ import ResultMessage from './components/ResultMessage'
 class App extends Component {
   state = {
     activeItem: "",
-    goBtn: ""
+    goBtn: "",
+    randomItem: ""
   }
 
   handleClick = (e, { name }) => this.setState({ activeItem: name })
-  onClickHandlerGoBtn = e => this.setState({ goBtn: true })
-
-  render() {
+  onClickHandlerGoBtn = (e) => {
+    this.setState({ goBtn: true })
     const rpsArray = ["rock", "paper", "scissors"]
     const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    this.setState({ randomItem: randomItem })
+  }
+
+  render() {
     return (
       <>
         <Header />
@@ -29,7 +33,7 @@ class App extends Component {
         <Computer
           activeItem={this.state.activeItem}
           goBtn={this.state.goBtn}
-          randomItem={randomItem}
+          randomItem={this.state.randomItem}
         />
         {/* Make RSP buttons and go button disabled till the user clicks start again */}
         <ResultMessage />
