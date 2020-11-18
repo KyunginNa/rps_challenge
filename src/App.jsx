@@ -15,6 +15,8 @@ class App extends Component {
   onClickHandlerGoBtn = e => this.setState({ goBtn: true })
 
   render() {
+    const rpsArray = ["rock", "paper", "scissors"]
+    const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
     return (
       <>
         <Header />
@@ -27,7 +29,9 @@ class App extends Component {
         <Computer
           activeItem={this.state.activeItem}
           goBtn={this.state.goBtn}
+          randomItem={randomItem}
         />
+        {/* Make RSP buttons and go button disabled till the user clicks start again */}
         <ResultMessage />
         <Footer />
       </>
