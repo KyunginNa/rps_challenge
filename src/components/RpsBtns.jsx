@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Button, Icon } from 'semantic-ui-react'
 
-const RpsButton = props => {
+const RpsBtns = props => {
     return (
         <>
             <Grid.Column>
@@ -47,4 +47,4 @@ const RpsButton = props => {
     )
 }
 
-export default RpsButton
+export default RpsBtns

@@ -25,7 +25,12 @@ describe("User can play Rock Paper Scissors", () => {
     });
 
     it("Displays Play Again button", () => {
-      cy.get("button#play-again").should("be.visible");
+      cy.get("#play-again").should("be.visible");
+    });
+
+    it("User can reset the game", () => {
+      cy.get("button#play-again").click();
+      cy.get("#result-message").should("be.empty");
     });
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-const GoButton = props => {
+const GoBtn = props => {
     return (
         <Button
             disabled={props.goBtn===true ? true : false}
@@ -14,4 +14,4 @@ const GoButton = props => {
     )
 }
 
-export default GoButton
+export default GoBtn

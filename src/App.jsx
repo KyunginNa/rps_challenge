@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import Computer from './components/Computer'
 import ResultMessage from './components/ResultMessage'
+import PlayAgainBtn from './components/PlayAgainBtn'
 
 class App extends Component {
   state = {
@@ -18,6 +20,9 @@ class App extends Component {
     const rpsArray = ["rock", "paper", "scissors"]
     const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
     this.setState({ randomItem: randomItem })
+  }
+  onClickHandlerPlayAgainBtn = (e) => {
+    this.setState({ activeItem: "", goBtn: false, randomItem: ""})
   }
 
   render() {
@@ -38,6 +43,10 @@ class App extends Component {
         <ResultMessage
           activeItem={this.state.activeItem}
           randomItem={this.state.randomItem}
+        />
+        <PlayAgainBtn
+          randomItem={this.state.randomItem}
+          onClickHandlerPlayAgainBtn={this.onClickHandlerPlayAgainBtn}
         />
         <Footer />
       </>
