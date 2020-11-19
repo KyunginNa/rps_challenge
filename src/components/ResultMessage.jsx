@@ -4,9 +4,10 @@ import { rpsHelper } from '../helpers/rpsHelper'
 const ResultMessage = props => {
     return (
         <h2 id="result-message">
-            { props.randomItem && (
-                rpsHelper(props.activeItem, props.randomItem)
-            )}
+            { props.activeItem &&
+                props.randomItem && (
+                    rpsHelper(props.activeItem, props.randomItem)
+                )}
         </h2>
     )
 }

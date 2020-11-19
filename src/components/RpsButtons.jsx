@@ -6,8 +6,9 @@ const RpsButton = props => {
         <>
             <Grid.Column>
                 <Button
+                    disabled={props.goBtn===true ? true : false}
                     toggle
-                    active={ props.activeItem === "rock"}
+                    active={props.activeItem === "rock"}
                     name="rock"
                     id="player-rock"
                     onClick={props.handleClick}
@@ -18,6 +19,7 @@ const RpsButton = props => {
             </Grid.Column>
             <Grid.Column>
                 <Button
+                    disabled={props.goBtn===true ? true : false}
                     toggle
                     active={props.activeItem === "paper"}
                     name="paper"
@@ -30,6 +32,7 @@ const RpsButton = props => {
             </Grid.Column>
             <Grid.Column>
                 <Button
+                    disabled={props.goBtn===true ? true : false}
                     toggle
                     active={props.activeItem === "scissors"}
                     name="scissors"

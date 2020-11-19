@@ -4,7 +4,7 @@ import { Button } from 'semantic-ui-react'
 const GoButton = props => {
     return (
         <Button
-            active={props.goBtn}
+            disabled={props.goBtn===true ? true : false}
             id="player-go"
             inverted color='green'
             size="big"

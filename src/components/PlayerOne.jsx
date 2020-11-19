@@ -9,10 +9,10 @@ const PlayerOne = props => {
             <Header id="player-header" as="h2" textAlign="center">Player</Header>
             <Grid columns={3} relaxed textAlign="center">
                 <Grid.Row>
-                    <RpsButton activeItem={props.activeItem} handleClick={props.handleClick} />
+                    <RpsButton activeItem={props.activeItem} handleClick={props.handleClick} goBtn={props.goBtn} />
                 </Grid.Row>
                 <Grid.Row>
-                    <GoButton onClickHandlerGoBtn={props.onClickHandlerGoBtn} active={props.goBtn}/>
+                    <GoButton onClickHandlerGoBtn={props.onClickHandlerGoBtn} goBtn={props.goBtn}/>
                 </Grid.Row>
             </Grid>
         </div>
