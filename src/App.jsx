@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Divider } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
