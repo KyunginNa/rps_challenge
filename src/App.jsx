@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Grid, Divider } from 'semantic-ui-react'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -22,32 +23,46 @@ class App extends Component {
     this.setState({ randomItem: randomItem })
   }
   onClickHandlerPlayAgainBtn = (e) => {
-    this.setState({ activeItem: "", goBtn: false, randomItem: ""})
+    this.setState({ activeItem: "", goBtn: false, randomItem: "" })
   }
 
   render() {
     return (
       <>
         <Header />
-        <PlayerOne
-          activeItem={this.state.activeItem}
-          handleClick={this.handleClick}
-          onClickHandlerGoBtn={this.onClickHandlerGoBtn}
-          goBtn={this.state.goBtn}
-        />
-        <Computer
-          activeItem={this.state.activeItem}
-          goBtn={this.state.goBtn}
-          randomItem={this.state.randomItem}
-        />
-        <ResultMessage
-          activeItem={this.state.activeItem}
-          randomItem={this.state.randomItem}
-        />
-        <PlayAgainBtn
-          randomItem={this.state.randomItem}
-          onClickHandlerPlayAgainBtn={this.onClickHandlerPlayAgainBtn}
-        />
+        <Grid id="game-board">
+          <Grid.Row>
+            <Grid.Column width={8}>
+              <PlayerOne
+                activeItem={this.state.activeItem}
+                handleClick={this.handleClick}
+                onClickHandlerGoBtn={this.onClickHandlerGoBtn}
+                goBtn={this.state.goBtn}
+              />
+            </Grid.Column>
+            
+            <Grid.Column width={8} textAlign="center">
+              <Computer
+                activeItem={this.state.activeItem}
+                goBtn={this.state.goBtn}
+                randomItem={this.state.randomItem}
+              />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered>
+            <ResultMessage
+              activeItem={this.state.activeItem}
+              randomItem={this.state.randomItem}
+            />
+          </Grid.Row>
+          <Grid.Row centered>
+            <PlayAgainBtn
+              activeItem={this.state.activeItem}
+              randomItem={this.state.randomItem}
+              onClickHandlerPlayAgainBtn={this.onClickHandlerPlayAgainBtn}
+            />
+          </Grid.Row>
+        </Grid>
         <Footer />
       </>
     )

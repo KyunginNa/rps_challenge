@@ -24,3 +24,11 @@ footer {
   margin-bottom: 0;
   text-align: center;
 }
+
+#game-board {
+  margin-top: 10em;
+}
+
+#result-message {
+  margin-top: 2em;
+}

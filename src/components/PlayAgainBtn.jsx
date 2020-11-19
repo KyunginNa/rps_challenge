@@ -3,7 +3,9 @@ import { Button } from 'semantic-ui-react'
 
 const PlayAgainBtn = props => {
   return (
-      props.randomItem && (
+    props.randomItem &&
+    props.activeItem &&
+    (
       <Button
         id="play-again"
         inverted color='red'
@@ -11,7 +13,7 @@ const PlayAgainBtn = props => {
         onClick={props.onClickHandlerPlayAgainBtn}>
         <Button.Content>Play Again!</Button.Content>
       </Button>
-      )
+    )
   )
 }
 
