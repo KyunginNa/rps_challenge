@@ -5,7 +5,7 @@ const Computer = props => {
     const activeItem = props.activeItem
     const goBtn = props.goBtn
     const randomItem = props.randomItem
-   
+
     return (
         <>
             <Header id="computer-header" as="h2" textAlign="center">Computer</Header>

@@ -1,9 +1,13 @@
 import React from 'react'
+import { rpsHelper } from '../helpers/rpsHelper'
 
-const ResultMessage = () => {
+const ResultMessage = props => {
     return (
-        <div id="result-message">
-        </div>
+        <h2 id="result-message">
+            { props.randomItem && (
+                rpsHelper(props.activeItem, props.randomItem)
+            )}
+        </h2>
     )
 }
 

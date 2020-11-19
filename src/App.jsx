@@ -35,8 +35,10 @@ class App extends Component {
           goBtn={this.state.goBtn}
           randomItem={this.state.randomItem}
         />
-        {/* Make RSP buttons and go button disabled till the user clicks start again */}
-        <ResultMessage />
+        <ResultMessage
+          activeItem={this.state.activeItem}
+          randomItem={this.state.randomItem}
+        />
         <Footer />
       </>
     )
