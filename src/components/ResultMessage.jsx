@@ -1,12 +1,12 @@
 import React from 'react'
 import { rpsHelper } from '../helpers/rpsHelper'
 
-const ResultMessage = ({ activeItem, randomItem }) => {
+const ResultMessage = ({ playerOnePick, randomItem }) => {
     return (
         <h1 id="result-message">
-            { activeItem &&
+            { playerOnePick &&
                 randomItem && (
-                    rpsHelper(activeItem, randomItem)
+                    rpsHelper(playerOnePick, randomItem)
                 )}
         </h1>
     )

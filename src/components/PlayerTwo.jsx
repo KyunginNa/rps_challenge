@@ -1,23 +1,23 @@
 import React from 'react'
 import RpsBtns from './RpsBtns'
-import GoBtn from './GoBtn'
+import PlayerOneGoBtn from './PlayerOneGoBtn'
 import { Header, Grid } from 'semantic-ui-react'
 
-const PlayerTwo = ({ activeItem, handleClick, goBtn, onClickHandlerGoBtn, playerOnePicked }) => {
+const PlayerTwo = ({ activeItem, handleClick, PlayerOneGoBtn, onClickHandlerGoBtn, playerOnePicked }) => {
     return (
         <>
             <Header id="player-header" as="h2" textAlign="center">Player2</Header>
             <div id="player2-board">
-                {playerOnePicked && (
+                {/* {playerOnePicked && (
                     <Grid columns={3} relaxed textAlign="center">
                         <Grid.Row>
-                            <RpsBtns activeItem={activeItem} handleClick={handleClick} goBtn={goBtn} />
+                            <RpsBtns activeItem={activeItem} handleClick={handleClick} PlayerOneGoBtn={PlayerOneGoBtn} />
                         </Grid.Row>
                         <Grid.Row>
-                            <GoBtn onClickHandlerGoBtn={onClickHandlerGoBtn} goBtn={goBtn} />
+                            <PlayerOneGoBtn onClickHandlerGoBtn={onClickHandlerGoBtn} PlayerOneGoBtn={PlayerOneGoBtn} />
                         </Grid.Row>
                     </Grid>
-                )}
+                )} */}
             </div>
         </>
     )

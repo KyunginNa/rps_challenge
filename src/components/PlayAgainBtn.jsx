@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-const PlayAgainBtn = ({ randomItem, activeItem, onClickHandlerPlayAgainBtn }) => {
+const PlayAgainBtn = ({ randomItem, playerOnePick, onClickHandlerPlayAgainBtn }) => {
   return (
     randomItem &&
-    activeItem &&
+    playerOnePick &&
     (
       <Button
         id="play-again"
