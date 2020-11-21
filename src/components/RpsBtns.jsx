@@ -1,17 +1,17 @@
 import React from 'react'
 import { Grid, Button, Icon } from 'semantic-ui-react'
 
-const RpsBtns = props => {
+const RpsBtns = ({ goBtn, activeItem, handleClick }) => {
     return (
         <>
             <Grid.Column>
                 <Button
-                    disabled={props.goBtn===true ? true : false}
+                    disabled={goBtn === true ? true : false}
                     toggle
-                    active={props.activeItem === "rock"}
+                    active={activeItem === "rock"}
                     name="rock"
                     id="player-rock"
-                    onClick={props.handleClick}
+                    onClick={handleClick}
                     circular icon
                     inverted>
                     <Icon name="hand rock outline" size="massive" color="black" />
@@ -19,12 +19,12 @@ const RpsBtns = props => {
             </Grid.Column>
             <Grid.Column>
                 <Button
-                    disabled={props.goBtn===true ? true : false}
+                    disabled={goBtn === true ? true : false}
                     toggle
-                    active={props.activeItem === "paper"}
+                    active={activeItem === "paper"}
                     name="paper"
                     id="player-paper"
-                    onClick={props.handleClick}
+                    onClick={handleClick}
                     circular icon
                     inverted>
                     <Icon name="hand paper outline" size="massive" color="black" />
@@ -32,12 +32,12 @@ const RpsBtns = props => {
             </Grid.Column>
             <Grid.Column>
                 <Button
-                    disabled={props.goBtn===true ? true : false}
+                    disabled={goBtn === true ? true : false}
                     toggle
-                    active={props.activeItem === "scissors"}
+                    active={activeItem === "scissors"}
                     name="scissors"
                     id="player-scissors"
-                    onClick={props.handleClick}
+                    onClick={handleClick}
                     circular icon
                     inverted>
                     <Icon name="hand scissors outline" size="massive" color="black" />

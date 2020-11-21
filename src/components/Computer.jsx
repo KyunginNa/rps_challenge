@@ -1,10 +1,7 @@
 import React from 'react'
 import { Header, Icon } from 'semantic-ui-react'
 
-const Computer = props => {
-    const activeItem = props.activeItem
-    const goBtn = props.goBtn
-    const randomItem = props.randomItem
+const Computer = ({ activeItem, goBtn, randomItem }) => {
 
     return (
         <>

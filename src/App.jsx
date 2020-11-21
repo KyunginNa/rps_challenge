@@ -40,7 +40,7 @@ class App extends Component {
                 goBtn={this.state.goBtn}
               />
             </Grid.Column>
-            
+
             <Grid.Column width={8} textAlign="center">
               <Computer
                 activeItem={this.state.activeItem}
