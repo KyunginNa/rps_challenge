@@ -15,14 +15,14 @@ class App extends Component {
     playerOnePicked: false
   }
 
-  handleClick = (e, { name }) => this.setState({ playerOnePick: name })
-  onClickHandlerplayerOneGoBtn = (e) => {
-    const rpsArray = ["rock", "paper", "scissors"]
-    const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    this.setState({ playerOneGoBtn: true, randomItem: randomItem, playerOnePicked: true })
+  onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
+
+  onClickPlayerOneGoBtn = (e) => {
+    this.setState({ playerOneGoBtn: true, playerOnePicked: true })
   }
+
   onClickHandlerPlayAgainBtn = (e) => {
-    this.setState({ playerOnePick: "", playerOneGoBtn: false, randomItem: "" })
+    this.setState({ playerOnePick: "", playerOneGoBtn: false })
   }
 
   render() {
@@ -34,8 +34,8 @@ class App extends Component {
             <Grid.Column width={8}>
               <PlayerOne
                 playerOnePick={this.state.playerOnePick}
-                handleClick={this.handleClick}
-                onClickHandlerplayerOneGoBtn={this.onClickHandlerplayerOneGoBtn}
+                onClickPlayerOneItem={this.onClickPlayerOneItem}
+                onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
                 playerOneGoBtn={this.state.playerOneGoBtn}
                 playerOnePicked={this.state.playerOnePicked}
               />

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Button, Icon } from 'semantic-ui-react'
 
-const PlayerOneRpsBtns = ({ playerOneGoBtn, playerOnePick, handleClick }) => {
+const PlayerOneRpsBtns = ({ playerOnePick, onClickHandler, playerOneGoBtn }) => {
     return (
         <>
             <Grid.Column>
@@ -11,7 +11,7 @@ const PlayerOneRpsBtns = ({ playerOneGoBtn, playerOnePick, handleClick }) => {
                     active={playerOnePick === "rock"}
                     name="rock"
                     id="player-rock"
-                    onClick={handleClick}
+                    onClick={onClickHandler}
                     circular icon
                     inverted>
                     <Icon name="hand rock outline" size="massive" color="black" />
@@ -24,7 +24,7 @@ const PlayerOneRpsBtns = ({ playerOneGoBtn, playerOnePick, handleClick }) => {
                     active={playerOnePick === "paper"}
                     name="paper"
                     id="player-paper"
-                    onClick={handleClick}
+                    onClick={onClickHandler}
                     circular icon
                     inverted>
                     <Icon name="hand paper outline" size="massive" color="black" />
@@ -37,7 +37,7 @@ const PlayerOneRpsBtns = ({ playerOneGoBtn, playerOnePick, handleClick }) => {
                     active={playerOnePick === "scissors"}
                     name="scissors"
                     id="player-scissors"
-                    onClick={handleClick}
+                    onClick={onClickHandler}
                     circular icon
                     inverted>
                     <Icon name="hand scissors outline" size="massive" color="black" />

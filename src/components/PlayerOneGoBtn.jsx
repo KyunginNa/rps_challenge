@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-const PlayerOneGoBtn = ({ playerOneGoBtn, onClickHandlerplayerOneGoBtn }) => {
+const PlayerOneGoBtn = ({ playerOneGoBtn, onClickHandler }) => {
     return (
         <>
             <Button
@@ -9,7 +9,7 @@ const PlayerOneGoBtn = ({ playerOneGoBtn, onClickHandlerplayerOneGoBtn }) => {
                 id="player-go"
                 inverted color='green'
                 size="big"
-                onClick={onClickHandlerplayerOneGoBtn}>
+                onClick={onClickHandler}>
                 <Button.Content>Go!</Button.Content>
             </Button>
         </>
