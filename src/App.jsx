@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
-import Computer from './components/Computer'
+import PlayerTwo from './components/PlayerTwo'
 import ResultMessage from './components/ResultMessage'
 import PlayAgainBtn from './components/PlayAgainBtn'
 
@@ -13,7 +13,7 @@ class App extends Component {
     activeItem: "",
     goBtn: false,
     randomItem: "",
-    playerOnePicked: false
+    playerOnePicked: false,
   }
 
   handleClick = (e, { name }) => this.setState({ activeItem: name })
@@ -41,12 +41,13 @@ class App extends Component {
                 playerOnePicked={this.state.playerOnePicked}
               />
             </Grid.Column>
-
             <Grid.Column width={8} textAlign="center">
-              <Computer
+              <PlayerTwo
                 activeItem={this.state.activeItem}
+                handleClick={this.handleClick}
+                onClickHandlerGoBtn={this.onClickHandlerGoBtn}
                 goBtn={this.state.goBtn}
-                randomItem={this.state.randomItem}
+                playerOnePicked={this.state.playerOnePicked}
               />
             </Grid.Column>
           </Grid.Row>
