@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return (
         <footer>
-            <p id="footer">Version 1.0</p>
+            <p id="footer">Version 2.0</p>
         </footer>
     )
 }
