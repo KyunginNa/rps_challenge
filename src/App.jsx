@@ -4,7 +4,7 @@ import { Grid } from 'semantic-ui-react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
-// import PlayerTwo from './components/PlayerTwo'
+import PlayerTwo from './components/PlayerTwo'
 import ResultMessage from './components/ResultMessage'
 // import PlayAgainBtn from './components/PlayAgainBtn'
 
@@ -12,13 +12,22 @@ class App extends Component {
   state = {
     playerOnePick: "",
     playerOneGoBtn: false,
-    playerOnePicked: false
+    playerOnePicked: false,
+    playerTwoPick: "",
+    playerTwoGoBtn: false,
+    playerTwoPicked: false
   }
 
   onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
 
   onClickPlayerOneGoBtn = (e) => {
     this.setState({ playerOneGoBtn: true, playerOnePicked: true })
+  }
+
+  onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
+
+  onClickPlayerTwoGoBtn = (e) => {
+    this.setState({ playerTwoGoBtn: true, playerTwoPicked: true, playerOnePicked: false })
   }
 
   onClickHandlerPlayAgainBtn = (e) => {
@@ -41,8 +50,14 @@ class App extends Component {
               />
             </Grid.Column>
             <Grid.Column width={8} textAlign="center">
-              {/* <PlayerTwo
-              /> */}
+              <PlayerTwo
+                playerOneGoBtn={this.state.playerOneGoBtn}
+                playerTwoPick={this.state.playerTwoPick}
+                onClickPlayerTwoItem={this.onClickPlayerTwoItem}
+                onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
+                playerTwoGoBtn={this.state.playerTwoGoBtn}
+                playerTwoPicked={this.state.playerTwoPicked}
+              />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>

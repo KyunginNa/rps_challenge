@@ -38,6 +38,8 @@ describe("Users can play Rock Paper Scissors", () => {
   describe("Player2's turn", () => {
     beforeEach(() => {
       cy.visit("/");
+      cy.get("button#player-rock").click();
+      cy.get("button#player-go").click();
     });
     it("Player2 can choose rock", () => {
       cy.get("button#player2-rock").click();
@@ -55,7 +57,7 @@ describe("Users can play Rock Paper Scissors", () => {
     });
 
     it("Redisplays player1's board", () => {
-      cy.get("button#player-rock").click();
+      cy.get("button#player2-rock").click();
       cy.get("button#player2-go").click();
       cy.get("#player1-board").should("be.visible");
     });
