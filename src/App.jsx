@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
 import ResultMessage from './components/ResultMessage'
-// import PlayAgainBtn from './components/PlayAgainBtn'
+import PlayAgainBtn from './components/PlayAgainBtn'
 
 class App extends Component {
   state = {
@@ -30,8 +30,15 @@ class App extends Component {
     this.setState({ playerTwoGoBtn: true, playerTwoPicked: true, playerOnePicked: false })
   }
 
-  onClickHandlerPlayAgainBtn = (e) => {
-    this.setState({ playerOnePick: "", playerOneGoBtn: false })
+  onClickPlayAgainBtn = (e) => {
+    this.setState({
+      playerOnePick: "",
+      playerOneGoBtn: false,
+      playerOnePicked: false,
+      playerTwoPick: "",
+      playerTwoGoBtn: false,
+      playerTwoPicked: false
+    })
   }
 
   render() {
@@ -64,15 +71,14 @@ class App extends Component {
             <ResultMessage
               playerOnePick={this.state.playerOnePick}
               playerTwoPick={this.state.playerTwoPick}
-              playerTwoGoBtn={this.state.playerTwoGoBtn}
+              playerTwoPicked={this.state.playerTwoPicked}
             />
           </Grid.Row>
           <Grid.Row centered>
-            {/* <PlayAgainBtn
-              playerOnePick={this.state.playerOnePick}
-              randomItem={this.state.randomItem}
-              onClickHandlerPlayAgainBtn={this.onClickHandlerPlayAgainBtn}
-            /> */}
+            <PlayAgainBtn
+              playerTwoPicked={this.state.playerTwoPicked}
+              onClickPlayAgainBtn={this.onClickPlayAgainBtn}
+            />
           </Grid.Row>
         </Grid>
         <Footer />

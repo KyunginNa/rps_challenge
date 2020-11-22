@@ -83,14 +83,14 @@ describe("Users can play Rock Paper Scissors", () => {
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
     });
-  });
 
-  it("Displays Play Again button", () => {
-    cy.get("#play-again").should("be.visible");
-  });
+    it("Displays Play Again button", () => {
+      cy.get("#play-again").should("be.visible");
+    });
 
-  it("Resets the game board", () => {
-    cy.get("button#play-again").click();
-    cy.get("#result-message").should("be.empty");
+    it("Resets the game board", () => {
+      cy.get("button#play-again").click();
+      cy.get("#result-message").should("be.empty");
+    });
   });
 });
