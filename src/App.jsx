@@ -63,7 +63,6 @@ class App extends Component {
                 onClickPlayerTwoItem={this.onClickPlayerTwoItem}
                 onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
                 playerTwoGoBtn={this.state.playerTwoGoBtn}
-                playerTwoPicked={this.state.playerTwoPicked}
               />
             </Grid.Column>
           </Grid.Row>

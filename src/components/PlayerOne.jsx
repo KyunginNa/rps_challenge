@@ -14,7 +14,7 @@ const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn,
                             <PlayerOneRpsBtns playerOnePick={playerOnePick} onClickHandler={onClickPlayerOneItem} playerOneGoBtn={playerOneGoBtn} />
                         </Grid.Row>
                         <Grid.Row>
-                            <PlayerOneGoBtn onClickHandler={onClickPlayerOneGoBtn} playerOneGoBtn={playerOneGoBtn} />
+                            <PlayerOneGoBtn playerOnePick={playerOnePick} onClickHandler={onClickPlayerOneGoBtn} playerOneGoBtn={playerOneGoBtn} />
                         </Grid.Row>
                     </Grid>
                 )}
