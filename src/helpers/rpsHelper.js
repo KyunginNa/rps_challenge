@@ -1,23 +1,23 @@
-export const rpsHelper = (playerPick, computerPick) => {
-  if (playerPick === computerPick) {
-    return "You drew with the computer!";
-  } else if (playerPick === "rock") {
-    if (computerPick === "paper") {
-      return "You lost!";
+export const rpsHelper = (playerOnePick, playerTwoPick) => {
+  if (playerOnePick === playerTwoPick) {
+    return "This game was a draw!";
+  } else if (playerOnePick === "rock") {
+    if (playerTwoPick === "paper") {
+      return "Player 2 won!";
     } else {
-      return "You won!";
+      return "Player 1 won!";
     }
-  } else if (playerPick === "scissors") {
-    if (computerPick === "rock") {
-      return "You lost!";
+  } else if (playerOnePick === "scissors") {
+    if (playerTwoPick === "rock") {
+      return "Player 2 won!";
     } else {
-      return "You won!";
+      return "Player 1 won!";
     }
   } else {
-    if (computerPick === "scissors") {
-      return "You lost!";
+    if (playerOnePick === "scissors") {
+      return "Player 2 won!";
     } else {
-      return "You won!";
+      return "Player 1 won!";
     }
   }
 };

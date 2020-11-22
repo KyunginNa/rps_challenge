@@ -4,26 +4,41 @@ import { Grid } from 'semantic-ui-react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
-import Computer from './components/Computer'
+import PlayerTwo from './components/PlayerTwo'
 import ResultMessage from './components/ResultMessage'
 import PlayAgainBtn from './components/PlayAgainBtn'
 
 class App extends Component {
   state = {
-    activeItem: "",
-    goBtn: false,
-    randomItem: ""
+    playerOnePick: "",
+    playerOneGoBtn: false,
+    playerOnePicked: false,
+    playerTwoPick: "",
+    playerTwoGoBtn: false,
+    playerTwoPicked: false
   }
 
-  handleClick = (e, { name }) => this.setState({ activeItem: name })
-  onClickHandlerGoBtn = (e) => {
-    this.setState({ goBtn: true })
-    const rpsArray = ["rock", "paper", "scissors"]
-    const randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    this.setState({ randomItem: randomItem })
+  onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
+
+  onClickPlayerOneGoBtn = (e) => {
+    this.setState({ playerOneGoBtn: true, playerOnePicked: true })
   }
-  onClickHandlerPlayAgainBtn = (e) => {
-    this.setState({ activeItem: "", goBtn: false, randomItem: "" })
+
+  onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
+
+  onClickPlayerTwoGoBtn = (e) => {
+    this.setState({ playerTwoGoBtn: true, playerTwoPicked: true, playerOnePicked: false })
+  }
+
+  onClickPlayAgainBtn = (e) => {
+    this.setState({
+      playerOnePick: "",
+      playerOneGoBtn: false,
+      playerOnePicked: false,
+      playerTwoPick: "",
+      playerTwoGoBtn: false,
+      playerTwoPicked: false
+    })
   }
 
   render() {
@@ -34,32 +49,34 @@ class App extends Component {
           <Grid.Row>
             <Grid.Column width={8}>
               <PlayerOne
-                activeItem={this.state.activeItem}
-                handleClick={this.handleClick}
-                onClickHandlerGoBtn={this.onClickHandlerGoBtn}
-                goBtn={this.state.goBtn}
+                playerOnePick={this.state.playerOnePick}
+                onClickPlayerOneItem={this.onClickPlayerOneItem}
+                onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
+                playerOneGoBtn={this.state.playerOneGoBtn}
+                playerOnePicked={this.state.playerOnePicked}
               />
             </Grid.Column>
-
             <Grid.Column width={8} textAlign="center">
-              <Computer
-                activeItem={this.state.activeItem}
-                goBtn={this.state.goBtn}
-                randomItem={this.state.randomItem}
+              <PlayerTwo
+                playerOneGoBtn={this.state.playerOneGoBtn}
+                playerTwoPick={this.state.playerTwoPick}
+                onClickPlayerTwoItem={this.onClickPlayerTwoItem}
+                onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
+                playerTwoGoBtn={this.state.playerTwoGoBtn}
               />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
             <ResultMessage
-              activeItem={this.state.activeItem}
-              randomItem={this.state.randomItem}
+              playerOnePick={this.state.playerOnePick}
+              playerTwoPick={this.state.playerTwoPick}
+              playerTwoPicked={this.state.playerTwoPicked}
             />
           </Grid.Row>
           <Grid.Row centered>
             <PlayAgainBtn
-              activeItem={this.state.activeItem}
-              randomItem={this.state.randomItem}
-              onClickHandlerPlayAgainBtn={this.onClickHandlerPlayAgainBtn}
+              playerTwoPicked={this.state.playerTwoPicked}
+              onClickPlayAgainBtn={this.onClickPlayAgainBtn}
             />
           </Grid.Row>
         </Grid>
