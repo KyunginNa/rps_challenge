@@ -63,7 +63,8 @@ class App extends Component {
           <Grid.Row centered>
             <ResultMessage
               playerOnePick={this.state.playerOnePick}
-              randomItem={this.state.randomItem}
+              playerTwoPick={this.state.playerTwoPick}
+              playerTwoGoBtn={this.state.playerTwoGoBtn}
             />
           </Grid.Row>
           <Grid.Row centered>
