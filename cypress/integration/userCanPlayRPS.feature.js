@@ -67,23 +67,30 @@ describe("Users can play Rock Paper Scissors", () => {
     beforeEach(() => {
       cy.get("button#player-rock").click();
       cy.get("button#player-go").click();
-    });
-
-    it("Displays what computer chose", () => {
-      cy.get("#computer-pick").should("be.visible");
+      cy.get("button#player2-paper").click();
+      cy.get("button#player2-go").click();
     });
 
     it("Displays a result message", () => {
-      cy.get("#result-message").should("not.be.empty");
+      cy.get("#result-message").should("contain", "Player 2 won!");
     });
+  });
 
-    it("Displays Play Again button", () => {
-      cy.get("#play-again").should("be.visible");
+  describe("Users can reset the game", () => {
+    beforeEach(() => {
+      cy.get("button#player-rock").click();
+      cy.get("button#player-go").click();
+      cy.get("button#player2-paper").click();
+      cy.get("button#player2-go").click();
     });
+  });
 
-    it("User can reset the game", () => {
-      cy.get("button#play-again").click();
-      cy.get("#result-message").should("be.empty");
-    });
+  it("Displays Play Again button", () => {
+    cy.get("#play-again").should("be.visible");
+  });
+
+  it("Resets the game board", () => {
+    cy.get("button#play-again").click();
+    cy.get("#result-message").should("be.empty");
   });
 });
