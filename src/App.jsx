@@ -5,8 +5,9 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
-import ResultMessage from './components/ResultMessage'
+// import ResultMessage from './components/ResultMessage'
 import PlayAgainBtn from './components/PlayAgainBtn'
+import { returnResultOfRPS } from './helpers/rpsHelper'
 
 class App extends Component {
   state = {
@@ -15,7 +16,10 @@ class App extends Component {
     playerOnePicked: false,
     playerTwoPick: "",
     playerTwoGoBtn: false,
-    playerTwoPicked: false
+    playerTwoPicked: false,
+    resultMessage: "",
+    playerOneScore: 0,
+    playerTwoScore: 0
   }
 
   onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
@@ -28,6 +32,13 @@ class App extends Component {
 
   onClickPlayerTwoGoBtn = (e) => {
     this.setState({ playerTwoGoBtn: true, playerTwoPicked: true, playerOnePicked: false })
+    const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
+    this.setState({ resultMessage: message })
+    if (score === 1) {
+      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
+    } else if (score === 2) {
+      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
+    }
   }
 
   onClickPlayAgainBtn = (e) => {
@@ -42,9 +53,15 @@ class App extends Component {
   }
 
   render() {
+    let resultMessage;
+    this.state.playerOnePick &&
+      this.state.playerTwoPick &&
+      this.state.playerTwoPicked ? resultMessage = this.state.resultMessage : resultMessage = ""
+
     return (
       <>
         <Header />
+        <h1>{this.state.playerOneScore}:{this.state.playerTwoScore}</h1>
         <Grid id="game-board">
           <Grid.Row>
             <Grid.Column width={8}>
@@ -67,11 +84,7 @@ class App extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-            <ResultMessage
-              playerOnePick={this.state.playerOnePick}
-              playerTwoPick={this.state.playerTwoPick}
-              playerTwoPicked={this.state.playerTwoPicked}
-            />
+            <h1 id="result-message">{resultMessage}</h1>
           </Grid.Row>
           <Grid.Row centered>
             <PlayAgainBtn
