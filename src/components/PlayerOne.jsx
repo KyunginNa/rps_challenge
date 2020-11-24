@@ -3,12 +3,12 @@ import PlayerOneRpsBtns from './PlayerOneRpsBtns'
 import PlayerOneGoBtn from './PlayerOneGoBtn'
 import { Header, Grid } from 'semantic-ui-react'
 
-const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn, playerOneGoBtn, playerOnePicked }) => {
+const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn, playerOneGoBtn, playerOneVisible }) => {
     return (
         <>
             <Header id="player-header" as="h2" textAlign="center">Player1</Header>
             <div id="player1-board">
-                {!playerOnePicked && (
+                {playerOneVisible && (
                     <Grid columns={3} relaxed textAlign="center">
                         <Grid.Row>
                             <PlayerOneRpsBtns playerOnePick={playerOnePick} onClickHandler={onClickPlayerOneItem} playerOneGoBtn={playerOneGoBtn} />

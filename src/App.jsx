@@ -13,10 +13,9 @@ class App extends Component {
   state = {
     playerOnePick: "",
     playerOneGoBtn: false,
-    playerOnePicked: false,
+    playerOneVisible: true,
     playerTwoPick: "",
     playerTwoGoBtn: false,
-    playerTwoPicked: false,
     resultMessage: "",
     playerOneScore: 0,
     playerTwoScore: 0
@@ -25,13 +24,13 @@ class App extends Component {
   onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
 
   onClickPlayerOneGoBtn = (e) => {
-    this.setState({ playerOneGoBtn: true, playerOnePicked: true })
+    this.setState({ playerOneGoBtn: true, playerOneVisible: false })
   }
 
   onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
 
   onClickPlayerTwoGoBtn = (e) => {
-    this.setState({ playerTwoGoBtn: true, playerTwoPicked: true, playerOnePicked: false })
+    this.setState({ playerTwoGoBtn: true, playerOneVisible: true })
     const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
     this.setState({ resultMessage: message })
     if (score === 1) {
@@ -45,10 +44,9 @@ class App extends Component {
     this.setState({
       playerOnePick: "",
       playerOneGoBtn: false,
-      playerOnePicked: false,
+      playerOneVisible: true,
       playerTwoPick: "",
       playerTwoGoBtn: false,
-      playerTwoPicked: false,
       resultMessage: ""
     })
   }
@@ -57,10 +55,9 @@ class App extends Component {
     this.setState({
       playerOnePick: "",
       playerOneGoBtn: false,
-      playerOnePicked: false,
+      playerOneVisible: true,
       playerTwoPick: "",
       playerTwoGoBtn: false,
-      playerTwoPicked: false,
       resultMessage: "",
       playerOneScore: 0,
       playerTwoScore: 0
@@ -71,7 +68,7 @@ class App extends Component {
     let resultMessage;
     this.state.playerOnePick &&
       this.state.playerTwoPick &&
-      this.state.playerTwoPicked ? resultMessage = this.state.resultMessage : resultMessage = ""
+      this.state.playerTwoGoBtn ? resultMessage = this.state.resultMessage : resultMessage = ""
 
     return (
       <>
@@ -85,7 +82,7 @@ class App extends Component {
                 onClickPlayerOneItem={this.onClickPlayerOneItem}
                 onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
                 playerOneGoBtn={this.state.playerOneGoBtn}
-                playerOnePicked={this.state.playerOnePicked}
+                playerOneVisible={this.state.playerOneVisible}
               />
             </Grid.Column>
             <Grid.Column width={8} textAlign="center">
@@ -103,11 +100,11 @@ class App extends Component {
           </Grid.Row>
           <Grid.Row centered>
             <PlayAgainBtn
-              playerTwoPicked={this.state.playerTwoPicked}
+              playerTwoGoBtn={this.state.playerTwoGoBtn}
               onClickPlayAgainBtn={this.onClickPlayAgainBtn}
             />
             <RestartBtn
-              playerTwoPicked={this.state.playerTwoPicked}
+              playerTwoGoBtn={this.state.playerTwoGoBtn}
               onClickRestartBtn={this.onClickRestartBtn}
             />
           </Grid.Row>
