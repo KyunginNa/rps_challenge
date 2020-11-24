@@ -76,7 +76,7 @@ class App extends Component {
     return (
       <>
         <Header />
-        <h1>{this.state.playerOneScore}:{this.state.playerTwoScore}</h1>
+        <h1 id="current-score">{this.state.playerOneScore}:{this.state.playerTwoScore}</h1>
         <Grid id="game-board">
           <Grid.Row>
             <Grid.Column width={8}>
