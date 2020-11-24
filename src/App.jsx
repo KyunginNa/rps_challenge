@@ -27,12 +27,35 @@ class App extends Component {
     this.setState({ playerOneGoBtn: true, playerOneVisible: false })
   }
 
+  onClickPlayerOneRandomBtn = (e) => {
+    const rpsArray = ["rock", "paper", "scissors"]
+    let randomItemOne = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    this.setState({
+      playerOnePick: randomItemOne,
+      playerOneGoBtn: true,
+      playerOneVisible: false
+    })
+  }
+
   onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
 
   onClickPlayerTwoGoBtn = (e) => {
-    this.setState({ playerTwoGoBtn: true, playerOneVisible: true })
     const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
-    this.setState({ resultMessage: message })
+
+    this.setState({ playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
+
+    if (score === 1) {
+      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
+    } else if (score === 2) {
+      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
+    }
+  }
+
+  onClickPlayerTwoRandomBtn = (e) => {
+    const rpsArray = ["rock", "paper", "scissors"]
+    let randomItemTwo = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItemTwo)
+    this.setState({ playerTwoPick: randomItemTwo, playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
     if (score === 1) {
       this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
     } else if (score === 2) {
@@ -66,9 +89,7 @@ class App extends Component {
 
   render() {
     let resultMessage;
-    this.state.playerOnePick &&
-      this.state.playerTwoPick &&
-      this.state.playerTwoGoBtn ? resultMessage = this.state.resultMessage : resultMessage = ""
+    this.state.playerTwoGoBtn ? resultMessage = this.state.resultMessage : resultMessage = ""
 
     return (
       <>
@@ -83,6 +104,7 @@ class App extends Component {
                 onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
                 playerOneGoBtn={this.state.playerOneGoBtn}
                 playerOneVisible={this.state.playerOneVisible}
+                onClickPlayerOneRandomBtn={this.onClickPlayerOneRandomBtn}
               />
             </Grid.Column>
             <Grid.Column width={8} textAlign="center">
@@ -92,6 +114,7 @@ class App extends Component {
                 onClickPlayerTwoItem={this.onClickPlayerTwoItem}
                 onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
                 playerTwoGoBtn={this.state.playerTwoGoBtn}
+                onClickPlayerTwoRandomBtn={this.onClickPlayerTwoRandomBtn}
               />
             </Grid.Column>
           </Grid.Row>
