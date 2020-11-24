@@ -1,4 +1,4 @@
-describe("Users can play Rock Paper Scissors", () => {
+describe("Rock Paper Scissors game", () => {
   beforeEach(() => {
     cy.visit("/");
   });
