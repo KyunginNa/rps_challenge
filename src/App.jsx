@@ -5,8 +5,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
-// import ResultMessage from './components/ResultMessage'
 import PlayAgainBtn from './components/PlayAgainBtn'
+import RestartBtn from './components/RestartBtn'
 import { returnResultOfRPS } from './helpers/rpsHelper'
 
 class App extends Component {
@@ -41,14 +41,29 @@ class App extends Component {
     }
   }
 
-  onClickPlayAgainBtn = (e) => {
+  onClickPlayAgainBtn = e => {
     this.setState({
       playerOnePick: "",
       playerOneGoBtn: false,
       playerOnePicked: false,
       playerTwoPick: "",
       playerTwoGoBtn: false,
-      playerTwoPicked: false
+      playerTwoPicked: false,
+      resultMessage: ""
+    })
+  }
+
+  onClickRestartBtn = e => {
+    this.setState({
+      playerOnePick: "",
+      playerOneGoBtn: false,
+      playerOnePicked: false,
+      playerTwoPick: "",
+      playerTwoGoBtn: false,
+      playerTwoPicked: false,
+      resultMessage: "",
+      playerOneScore: 0,
+      playerTwoScore: 0
     })
   }
 
@@ -90,6 +105,10 @@ class App extends Component {
             <PlayAgainBtn
               playerTwoPicked={this.state.playerTwoPicked}
               onClickPlayAgainBtn={this.onClickPlayAgainBtn}
+            />
+            <RestartBtn
+              playerTwoPicked={this.state.playerTwoPicked}
+              onClickRestartBtn={this.onClickRestartBtn}
             />
           </Grid.Row>
         </Grid>
