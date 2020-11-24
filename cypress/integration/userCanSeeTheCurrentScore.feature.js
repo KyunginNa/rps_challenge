@@ -1,4 +1,4 @@
-describe("Users can see the current score", () => {
+describe("The current score", () => {
   beforeEach(() => {
     cy.visit("/");
   });
