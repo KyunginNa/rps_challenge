@@ -51,7 +51,7 @@ footer {
 }
 
 #result-message {
-  margin-top: 1em;
+  margin-top: 0.5em;
   font-family: monospace;
   color: aliceblue;
 }
