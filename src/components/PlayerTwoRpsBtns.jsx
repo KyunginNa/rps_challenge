@@ -7,40 +7,37 @@ const PlayerTwoRpsBtns = ({ playerTwoPick, onClickHandler, playerTwoGoBtn }) => 
       <Grid.Column>
         <Button
           disabled={playerTwoGoBtn === true ? true : false}
-          toggle
           active={playerTwoPick === "rock"}
           name="rock"
           id="player2-rock"
           onClick={onClickHandler}
           circular icon
-          inverted>
-          <Icon name="hand rock outline" size="massive" color="black" />
+          inverted color="teal">
+          <Icon name="hand rock" size="massive" color="teal" />
         </Button>
       </Grid.Column>
       <Grid.Column>
         <Button
           disabled={playerTwoGoBtn === true ? true : false}
-          toggle
           active={playerTwoPick === "paper"}
           name="paper"
           id="player2-paper"
           onClick={onClickHandler}
           circular icon
-          inverted>
-          <Icon name="hand paper outline" size="massive" color="black" />
+          inverted color="teal">
+          <Icon name="hand paper" size="massive" color="teal" />
         </Button>
       </Grid.Column>
       <Grid.Column>
         <Button
           disabled={playerTwoGoBtn === true ? true : false}
-          toggle
           active={playerTwoPick === "scissors"}
           name="scissors"
           id="player2-scissors"
           onClick={onClickHandler}
           circular icon
-          inverted>
-          <Icon name="hand scissors outline" size="massive" color="black" />
+          inverted color="teal">
+          <Icon name="hand scissors" size="massive" color="teal" />
         </Button>
       </Grid.Column>
     </>

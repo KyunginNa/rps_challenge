@@ -8,9 +8,13 @@ const PlayerOneGoBtn = ({ playerOnePick, playerOneGoBtn, onClickHandler }) => {
                 <Button
                     disabled={playerOneGoBtn === true ? true : false}
                     id="player-go"
-                    inverted color='green'
+                    inverted color='white'
                     size="big"
-                    onClick={onClickHandler}>
+                    onClick={onClickHandler}
+                    style={{
+                        fontFamily: "monospace",
+                        foniSize: 19
+                    }}>
                     <Button.Content>Go!</Button.Content>
                 </Button>
             )

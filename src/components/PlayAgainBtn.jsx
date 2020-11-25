@@ -8,9 +8,13 @@ const PlayAgainBtn = ({ playerTwoGoBtn, onClickPlayAgainBtn }) => {
         (
           <Button
             id="play-again"
-            inverted color='red'
+            inverted color='white'
             size="big"
-            onClick={onClickPlayAgainBtn}>
+            onClick={onClickPlayAgainBtn}
+            style={{
+              fontFamily: "monospace",
+              foniSize: 19
+            }}>
             <Button.Content>Play Again!</Button.Content>
           </Button>
         )}

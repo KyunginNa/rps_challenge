@@ -6,9 +6,13 @@ const PlayerOneRandomBtn = ({ playerOneGoBtn, onClickHandler }) => {
     <Button
       disabled={playerOneGoBtn === true ? true : false}
       id="player1-random"
-      inverted color='olive'
+      inverted color='white'
       size="big"
-      onClick={onClickHandler}>
+      onClick={onClickHandler}
+      style={{
+        fontFamily: "monospace",
+        foniSize: 19
+      }}>
       <Button.Content>Let luck decide</Button.Content>
     </Button>
 

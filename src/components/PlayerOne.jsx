@@ -7,7 +7,16 @@ import { Header, Grid } from 'semantic-ui-react'
 const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn, playerOneGoBtn, playerOneVisible, onClickPlayerOneRandomBtn }) => {
     return (
         <>
-            <Header id="player-header" as="h2" textAlign="center">Player1</Header>
+            <Header
+                id="player-header"
+                textAlign="center"
+                style={{
+                    fontFamily: "monospace",
+                    fontSize: 35,
+                    color: "aliceblue"
+                }}
+            >Player 1
+            </Header>
             <div id="player1-board">
                 {playerOneVisible && (
                     <Grid columns={3} relaxed textAlign="center">

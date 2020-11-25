@@ -3,9 +3,16 @@ import { Segment } from 'semantic-ui-react'
 
 const Header = () => {
     return (
-            <Segment color="grey" size="large" id="header">
-                Play Rock Paper Scissors!
-            </Segment>
+        <Segment
+            id="header"
+            size="medium"
+            inverted color="teal"
+            vertical
+            textAlign="center"
+            style={{ fontFamily: "monospace" }}
+        >
+            Play Rock Paper Scissors with your friend!🤩
+        </Segment>
     )
 }
 

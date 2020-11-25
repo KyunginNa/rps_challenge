@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Statistic } from 'semantic-ui-react'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -94,44 +94,53 @@ class App extends Component {
     return (
       <>
         <Header />
-        <h1 id="current-score">{this.state.playerOneScore}:{this.state.playerTwoScore}</h1>
-        <Grid id="game-board">
-          <Grid.Row>
-            <Grid.Column width={8}>
-              <PlayerOne
-                playerOnePick={this.state.playerOnePick}
-                onClickPlayerOneItem={this.onClickPlayerOneItem}
-                onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
-                playerOneGoBtn={this.state.playerOneGoBtn}
-                playerOneVisible={this.state.playerOneVisible}
-                onClickPlayerOneRandomBtn={this.onClickPlayerOneRandomBtn}
-              />
-            </Grid.Column>
-            <Grid.Column width={8} textAlign="center">
-              <PlayerTwo
-                playerOneGoBtn={this.state.playerOneGoBtn}
-                playerTwoPick={this.state.playerTwoPick}
-                onClickPlayerTwoItem={this.onClickPlayerTwoItem}
-                onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
+        <div id="div-main">
+          <Statistic id="current-score" color='teal' inverted>
+            <Statistic.Label style={{ fontFamily: "monospace", fontSize: 16}}>
+              Score
+            </Statistic.Label>
+            <Statistic.Value style={{ fontFamily: "monospace" }}>
+              {this.state.playerOneScore}:{this.state.playerTwoScore}
+            </Statistic.Value>
+          </Statistic>
+          <Grid id="game-board">
+            <Grid.Row>
+              <Grid.Column width={8}>
+                <PlayerOne
+                  playerOnePick={this.state.playerOnePick}
+                  onClickPlayerOneItem={this.onClickPlayerOneItem}
+                  onClickPlayerOneGoBtn={this.onClickPlayerOneGoBtn}
+                  playerOneGoBtn={this.state.playerOneGoBtn}
+                  playerOneVisible={this.state.playerOneVisible}
+                  onClickPlayerOneRandomBtn={this.onClickPlayerOneRandomBtn}
+                />
+              </Grid.Column>
+              <Grid.Column width={8} textAlign="center">
+                <PlayerTwo
+                  playerOneGoBtn={this.state.playerOneGoBtn}
+                  playerTwoPick={this.state.playerTwoPick}
+                  onClickPlayerTwoItem={this.onClickPlayerTwoItem}
+                  onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
+                  playerTwoGoBtn={this.state.playerTwoGoBtn}
+                  onClickPlayerTwoRandomBtn={this.onClickPlayerTwoRandomBtn}
+                />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row centered>
+              <h1 id="result-message">{resultMessage}</h1>
+            </Grid.Row>
+            <Grid.Row centered>
+              <PlayAgainBtn
                 playerTwoGoBtn={this.state.playerTwoGoBtn}
-                onClickPlayerTwoRandomBtn={this.onClickPlayerTwoRandomBtn}
+                onClickPlayAgainBtn={this.onClickPlayAgainBtn}
               />
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row centered>
-            <h1 id="result-message">{resultMessage}</h1>
-          </Grid.Row>
-          <Grid.Row centered>
-            <PlayAgainBtn
-              playerTwoGoBtn={this.state.playerTwoGoBtn}
-              onClickPlayAgainBtn={this.onClickPlayAgainBtn}
-            />
-            <RestartBtn
-              playerTwoGoBtn={this.state.playerTwoGoBtn}
-              onClickRestartBtn={this.onClickRestartBtn}
-            />
-          </Grid.Row>
-        </Grid>
+              <RestartBtn
+                playerTwoGoBtn={this.state.playerTwoGoBtn}
+                onClickRestartBtn={this.onClickRestartBtn}
+              />
+            </Grid.Row>
+          </Grid>
+        </div>
         <Footer />
       </>
     )

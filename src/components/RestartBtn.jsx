@@ -1,20 +1,24 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
-const RestartBtn = ({playerTwoGoBtn, onClickRestartBtn}) => {
+const RestartBtn = ({ playerTwoGoBtn, onClickRestartBtn }) => {
   return (
     <>
-    { playerTwoGoBtn &&
-      (
-        <Button
-          id="restart"
-          inverted color='purple'
-          size="big"
-          onClick={onClickRestartBtn}>
-          <Button.Content>Start A New Game</Button.Content>
-        </Button>
-      )}
-  </>
+      { playerTwoGoBtn &&
+        (
+          <Button
+            id="restart"
+            inverted color='white'
+            size="big"
+            onClick={onClickRestartBtn}
+            style={{
+              fontFamily: "monospace",
+              foniSize: 19
+            }}>
+            <Button.Content>Start A New Game</Button.Content>
+          </Button>
+        )}
+    </>
   )
 }
 
