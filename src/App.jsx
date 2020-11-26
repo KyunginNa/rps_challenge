@@ -37,11 +37,15 @@ class App extends Component {
     }
   }
 
-  onClickPlayerOneRandomBtn = e => {
+  randomPick = () => {
     const rpsArray = ["rock", "paper", "scissors"]
     let randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    return randomItem
+  }
+
+  onClickPlayerOneRandomBtn = e => {
     this.setState({
-      playerOnePick: randomItem,
+      playerOnePick: this.randomPick(),
       playerOneGoBtn: true,
       playerOneVisible: false
     })
@@ -60,8 +64,7 @@ class App extends Component {
   }
 
   onClickPlayerTwoRandomBtn = e => {
-    const rpsArray = ["rock", "paper", "scissors"]
-    let randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    let randomItem = this.randomPick()
     const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItem)
     this.setState({
       playerTwoPick: randomItem,
