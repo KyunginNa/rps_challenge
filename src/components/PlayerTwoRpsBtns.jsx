@@ -13,7 +13,10 @@ const PlayerTwoRpsBtns = ({ playerTwoPick, onClickHandler, playerTwoGoBtn }) => 
           onClick={onClickHandler}
           circular icon
           color="teal">
-          <Icon name="hand rock" size="massive" inverted />
+          <Icon
+            name="hand rock"
+            size="massive"
+            inverted />
         </Button>
       </Grid.Column>
       <Grid.Column>
@@ -25,7 +28,10 @@ const PlayerTwoRpsBtns = ({ playerTwoPick, onClickHandler, playerTwoGoBtn }) => 
           onClick={onClickHandler}
           circular icon
           color="teal">
-          <Icon name="hand paper" size="massive" inverted />
+          <Icon
+            name="hand paper"
+            size="massive"
+            inverted />
         </Button>
       </Grid.Column>
       <Grid.Column>
@@ -37,7 +43,10 @@ const PlayerTwoRpsBtns = ({ playerTwoPick, onClickHandler, playerTwoGoBtn }) => 
           onClick={onClickHandler}
           circular icon
           color="teal">
-          <Icon name="hand scissors" size="massive" color="white" />
+          <Icon
+            name="hand scissors"
+            size="massive"
+            color="white" />
         </Button>
       </Grid.Column>
     </>

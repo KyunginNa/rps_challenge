@@ -12,8 +12,8 @@ describe("Random pick", () => {
 
   describe("Player2 makes computer choose", () => {
     beforeEach(() => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-random").click();
     });
     it("displays player1's board again", () => {

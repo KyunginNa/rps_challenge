@@ -9,8 +9,8 @@ describe("The current score", () => {
 
   describe("When player1 wins", () => {
     beforeEach(() => {
-      cy.get("button#player-paper").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-paper").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-rock").click();
       cy.get("button#player2-go").click();
     });
@@ -21,8 +21,8 @@ describe("The current score", () => {
 
   describe("When player2 wins", () => {
     beforeEach(() => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
     });
@@ -33,8 +33,8 @@ describe("The current score", () => {
 
   describe("When players draw", () => {
     beforeEach(() => {
-      cy.get("button#player-paper").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-paper").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
     });
@@ -45,8 +45,8 @@ describe("The current score", () => {
 
   describe("When players start a new game", () => {
     beforeEach(() => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
       cy.get("button#restart").click();
