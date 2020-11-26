@@ -41,7 +41,7 @@ Craft Academy course material 'React ( Loves ) Rails': (https://learn.craftacade
 
 ## Update and Improvements plans
 
-- Expand it to real-time multiplayer game.
+- Expand it to a real-time multiplayer game.
 
 ## License
 
