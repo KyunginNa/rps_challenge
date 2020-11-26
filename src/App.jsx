@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Statistic } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -7,6 +7,8 @@ import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
 import PlayAgainBtn from './components/PlayAgainBtn'
 import RestartBtn from './components/RestartBtn'
+import Score from './components/Score'
+
 import { returnResultOfRPS } from './helpers/rpsHelper'
 
 class App extends Component {
@@ -102,14 +104,10 @@ class App extends Component {
       <>
         <Header />
         <div id="div-main">
-          <Statistic id="current-score" color='teal' inverted>
-            <Statistic.Label style={{ fontFamily: "monospace", fontSize: 16 }}>
-              Score
-            </Statistic.Label>
-            <Statistic.Value style={{ fontFamily: "monospace" }}>
-              {this.state.playerOneScore}:{this.state.playerTwoScore}
-            </Statistic.Value>
-          </Statistic>
+          <Score
+            playerOneScore={this.state.playerOneScore}
+            playerTwoScore={this.state.playerTwoScore}
+          />
           <Grid id="game-board">
             <Grid.Row>
               <Grid.Column width={8}>
