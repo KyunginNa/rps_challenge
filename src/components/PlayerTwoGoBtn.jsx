@@ -7,7 +7,7 @@ const PlayerTwoGoBtn = ({ playerTwoPick, playerTwoGoBtn, onClickHandler }) => {
             <Button
                 disabled={playerTwoPick && !playerTwoGoBtn ? false : true}
                 id="player2-go"
-                inverted color='white'
+                inverted
                 size="big"
                 onClick={onClickHandler}
                 style={{
