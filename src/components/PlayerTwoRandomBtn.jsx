@@ -6,7 +6,7 @@ const PlayerTwoRandomBtn = ({ playerTwoGoBtn, onClickHandler }) => {
     <Button
       disabled={playerTwoGoBtn === true ? true : false}
       id="player2-random"
-      inverted color='white'
+      inverted
       size="big"
       onClick={onClickHandler}
       style={{

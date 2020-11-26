@@ -8,7 +8,7 @@ const PlayAgainBtn = ({ playerTwoGoBtn, onClickPlayAgainBtn }) => {
         (
           <Button
             id="play-again"
-            inverted color='white'
+            inverted
             size="big"
             onClick={onClickPlayAgainBtn}
             style={{

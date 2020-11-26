@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Grid, Statistic } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -7,6 +7,8 @@ import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
 import PlayAgainBtn from './components/PlayAgainBtn'
 import RestartBtn from './components/RestartBtn'
+import Score from './components/Score'
+
 import { returnResultOfRPS } from './helpers/rpsHelper'
 
 class App extends Component {
@@ -23,15 +25,27 @@ class App extends Component {
 
   onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
 
-  onClickPlayerOneGoBtn = (e) => {
+  onClickPlayerOneGoBtn = e => {
     this.setState({ playerOneGoBtn: true, playerOneVisible: false })
   }
 
-  onClickPlayerOneRandomBtn = (e) => {
+  addScore = (score) => {
+    if (score === 1) {
+      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
+    } else if (score === 2) {
+      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
+    }
+  }
+
+  randomPick = () => {
     const rpsArray = ["rock", "paper", "scissors"]
-    let randomItemOne = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    let randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    return randomItem
+  }
+
+  onClickPlayerOneRandomBtn = e => {
     this.setState({
-      playerOnePick: randomItemOne,
+      playerOnePick: this.randomPick(),
       playerOneGoBtn: true,
       playerOneVisible: false
     })
@@ -39,28 +53,26 @@ class App extends Component {
 
   onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
 
-  onClickPlayerTwoGoBtn = (e) => {
+  onClickPlayerTwoGoBtn = e => {
     const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
-
-    this.setState({ playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
-
-    if (score === 1) {
-      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
-    } else if (score === 2) {
-      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
-    }
+    this.setState({
+      playerTwoGoBtn: true,
+      playerOneVisible: true,
+      resultMessage: message
+    })
+    this.addScore(score)
   }
 
-  onClickPlayerTwoRandomBtn = (e) => {
-    const rpsArray = ["rock", "paper", "scissors"]
-    let randomItemTwo = rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItemTwo)
-    this.setState({ playerTwoPick: randomItemTwo, playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
-    if (score === 1) {
-      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
-    } else if (score === 2) {
-      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
-    }
+  onClickPlayerTwoRandomBtn = e => {
+    let randomItem = this.randomPick()
+    const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItem)
+    this.setState({
+      playerTwoPick: randomItem,
+      playerTwoGoBtn: true,
+      playerOneVisible: true,
+      resultMessage: message
+    })
+    this.addScore(score)
   }
 
   onClickPlayAgainBtn = e => {
@@ -95,14 +107,10 @@ class App extends Component {
       <>
         <Header />
         <div id="div-main">
-          <Statistic id="current-score" color='teal' inverted>
-            <Statistic.Label style={{ fontFamily: "monospace", fontSize: 16}}>
-              Score
-            </Statistic.Label>
-            <Statistic.Value style={{ fontFamily: "monospace" }}>
-              {this.state.playerOneScore}:{this.state.playerTwoScore}
-            </Statistic.Value>
-          </Statistic>
+          <Score
+            playerOneScore={this.state.playerOneScore}
+            playerTwoScore={this.state.playerTwoScore}
+          />
           <Grid id="game-board">
             <Grid.Row>
               <Grid.Column width={8}>

@@ -8,7 +8,7 @@ const RestartBtn = ({ playerTwoGoBtn, onClickRestartBtn }) => {
         (
           <Button
             id="restart"
-            inverted color='white'
+            inverted
             size="big"
             onClick={onClickRestartBtn}
             style={{

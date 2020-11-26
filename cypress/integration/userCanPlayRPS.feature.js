@@ -8,29 +8,29 @@ describe("Rock Paper Scissors game", () => {
       cy.visit("/");
     });
     it("Player1 can choose rock", () => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
     });
 
     it("Player1 can choose paper", () => {
-      cy.get("button#player-paper").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-paper").click();
+      cy.get("button#player1-go").click();
     });
 
     it("Player1 can choose scissors", () => {
-      cy.get("button#player-scissors").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-scissors").click();
+      cy.get("button#player1-go").click();
     });
 
     it("Hides player1's board", () => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("#player1-board").should("not.be.visible");
     });
 
     it("Displays player2's board", () => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("#player2-board").should("be.visible");
     });
   });
@@ -38,8 +38,8 @@ describe("Rock Paper Scissors game", () => {
   describe("Player2's turn", () => {
     beforeEach(() => {
       cy.visit("/");
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
     });
     it("Player2 can choose rock", () => {
       cy.get("button#player2-rock").click();
@@ -65,8 +65,8 @@ describe("Rock Paper Scissors game", () => {
 
   describe("Users can see the result of the game", () => {
     beforeEach(() => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
     });
@@ -78,8 +78,8 @@ describe("Rock Paper Scissors game", () => {
 
   describe("Users can reset the game", () => {
     beforeEach(() => {
-      cy.get("button#player-rock").click();
-      cy.get("button#player-go").click();
+      cy.get("button#player1-rock").click();
+      cy.get("button#player1-go").click();
       cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
     });
