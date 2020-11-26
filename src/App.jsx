@@ -23,15 +23,23 @@ class App extends Component {
 
   onClickPlayerOneItem = (e, { name }) => this.setState({ playerOnePick: name })
 
-  onClickPlayerOneGoBtn = (e) => {
+  onClickPlayerOneGoBtn = e => {
     this.setState({ playerOneGoBtn: true, playerOneVisible: false })
   }
 
-  onClickPlayerOneRandomBtn = (e) => {
+  addScore = (score) => {
+    if (score === 1) {
+      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
+    } else if (score === 2) {
+      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
+    }
+  }
+
+  onClickPlayerOneRandomBtn = e => {
     const rpsArray = ["rock", "paper", "scissors"]
-    let randomItemOne = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    let randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
     this.setState({
-      playerOnePick: randomItemOne,
+      playerOnePick: randomItem,
       playerOneGoBtn: true,
       playerOneVisible: false
     })
@@ -39,28 +47,27 @@ class App extends Component {
 
   onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
 
-  onClickPlayerTwoGoBtn = (e) => {
+  onClickPlayerTwoGoBtn = e => {
     const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
-
-    this.setState({ playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
-
-    if (score === 1) {
-      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
-    } else if (score === 2) {
-      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
-    }
+    this.setState({
+      playerTwoGoBtn: true,
+      playerOneVisible: true,
+      resultMessage: message
+    })
+    this.addScore(score)
   }
 
-  onClickPlayerTwoRandomBtn = (e) => {
+  onClickPlayerTwoRandomBtn = e => {
     const rpsArray = ["rock", "paper", "scissors"]
-    let randomItemTwo = rpsArray[Math.floor(Math.random() * rpsArray.length)]
-    const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItemTwo)
-    this.setState({ playerTwoPick: randomItemTwo, playerTwoGoBtn: true, playerOneVisible: true, resultMessage: message })
-    if (score === 1) {
-      this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
-    } else if (score === 2) {
-      this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
-    }
+    let randomItem = rpsArray[Math.floor(Math.random() * rpsArray.length)]
+    const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItem)
+    this.setState({
+      playerTwoPick: randomItem,
+      playerTwoGoBtn: true,
+      playerOneVisible: true,
+      resultMessage: message
+    })
+    this.addScore(score)
   }
 
   onClickPlayAgainBtn = e => {
@@ -96,7 +103,7 @@ class App extends Component {
         <Header />
         <div id="div-main">
           <Statistic id="current-score" color='teal' inverted>
-            <Statistic.Label style={{ fontFamily: "monospace", fontSize: 16}}>
+            <Statistic.Label style={{ fontFamily: "monospace", fontSize: 16 }}>
               Score
             </Statistic.Label>
             <Statistic.Value style={{ fontFamily: "monospace" }}>
