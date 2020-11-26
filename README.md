@@ -29,9 +29,9 @@ Github: (https://github.com/KyunginNa/rps_challenge)
 
 ## Dependencies
 
-React 17.0.0
-Semantic UI CSS 2.4.1
-Semantic UI React 2.0.1
+React 17.0.0  
+Semantic UI CSS 2.4.1  
+Semantic UI React 2.0.1  
 Cypress 5.6.0
 
 ## Acknowledgements
