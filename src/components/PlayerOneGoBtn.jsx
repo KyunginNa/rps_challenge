@@ -1,7 +1,11 @@
 import React from 'react'
+import { useSelector, useDispatch } from "react-redux";
 import { Button } from 'semantic-ui-react'
 
-const PlayerOneGoBtn = ({ playerOnePick, playerOneGoBtn, onClickHandler }) => {
+const PlayerOneGoBtn = () => {
+  const playerOnePick = useSelector(state => state.playerOnePick)
+  const playerOneGoBtn = useSelector(state => state.playerOneGoBtn)
+  const dispatch = useDispatch()
   return (
     <>
       <Button
@@ -9,7 +13,7 @@ const PlayerOneGoBtn = ({ playerOnePick, playerOneGoBtn, onClickHandler }) => {
         id="player1-go"
         inverted
         size="big"
-        onClick={onClickHandler}
+        onClick={() => dispatch({ type: 'PLAYER_ONE_GO' })}
         style={{
           fontFamily: "monospace",
           foniSize: 19
