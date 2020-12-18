@@ -22,7 +22,52 @@ const rootReducer = (state = initialState, action) => {
         playerOneGoBtn: true,
         playerOneVisible: false,
       };
+    case "PLAYER_TWO_PICK":
+      return {
+        ...state,
+        playerTwoPick: action.payload,
+      };
 
+    case "PLAYER_TWO_GO":
+      if (action.payload.score === 1) {
+        return {
+          ...state,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
+          playerOneScore: state.playerOneScore + 1,
+        };
+      } else if (action.payload.score === 2) {
+        return {
+          ...state,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
+          playerTwoScore: state.playerTwoScore + 1,
+        };
+      }
+      break;
+    case "PLAYER_TWO_RANDOM":
+      if (action.payload.score === 1) {
+        return {
+          ...state,
+          playerTwoPick: action.payload.playerTwoPick,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
+          playerOneScore: state.playerOneScore + 1,
+        };
+      } else if (action.payload.score === 2) {
+        return {
+          ...state,
+          playerTwoPick: action.payload.playerTwoPick,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
+          playerTwoScore: state.playerTwoScore + 1,
+        };
+      }
+      break;
     default:
       return state;
   }

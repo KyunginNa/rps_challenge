@@ -1,10 +1,12 @@
 import React from 'react'
+import { useSelector } from "react-redux";
 import PlayerTwoRpsBtns from './PlayerTwoRpsBtns'
 import PlayerTwoGoBtn from './PlayerTwoGoBtn'
 import PlayerTwoRandomBtn from './PlayerTwoRandomBtn'
 import { Header, Grid } from 'semantic-ui-react'
 
-const PlayerTwo = ({ playerOneGoBtn, playerTwoPick, onClickPlayerTwoItem, onClickPlayerTwoGoBtn, playerTwoGoBtn, onClickPlayerTwoRandomBtn }) => {
+const PlayerTwo = () => {
+  const playerOneGoBtn = useSelector(state => state.playerOneGoBtn)
   return (
     <>
       <Header
@@ -24,21 +26,13 @@ const PlayerTwo = ({ playerOneGoBtn, playerTwoPick, onClickPlayerTwoItem, onClic
             relaxed
             textAlign="center">
             <Grid.Row id="player2-rps">
-              <PlayerTwoRpsBtns
-                playerTwoPick={playerTwoPick}
-                onClickHandler={onClickPlayerTwoItem}
-                playerTwoGoBtn={playerTwoGoBtn} />
+              <PlayerTwoRpsBtns />
             </Grid.Row>
             <Grid.Row>
-              <PlayerTwoGoBtn
-                playerTwoPick={playerTwoPick}
-                onClickHandler={onClickPlayerTwoGoBtn}
-                playerTwoGoBtn={playerTwoGoBtn} />
+              <PlayerTwoGoBtn />
             </Grid.Row>
             <Grid.Row>
-              <PlayerTwoRandomBtn
-                playerTwoGoBtn={playerTwoGoBtn}
-                onClickHandler={onClickPlayerTwoRandomBtn} />
+              <PlayerTwoRandomBtn />
             </Grid.Row>
           </Grid>
         )}

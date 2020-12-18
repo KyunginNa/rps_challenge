@@ -1,16 +1,16 @@
 import React from 'react'
 import { Grid } from 'semantic-ui-react'
-
+import { useSelector } from "react-redux";
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PlayerOne from './components/PlayerOne'
-// import PlayerTwo from './components/PlayerTwo'
+import PlayerTwo from './components/PlayerTwo'
 // import PlayAgainBtn from './components/PlayAgainBtn'
 // import RestartBtn from './components/RestartBtn'
 // import Score from './components/Score'
-// import { returnResultOfRPS } from './helpers/rpsHelper'
 
 const App = () => {
+  let resultMessage = useSelector(state => state.resultMessage)
 
   // addScore = (score) => {
   //   if (score === 1) {
@@ -18,30 +18,6 @@ const App = () => {
   //   } else if (score === 2) {
   //     this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
   //   }
-  // }
-
-  // onClickPlayerTwoItem = (e, { name }) => this.setState({ playerTwoPick: name })
-
-  // onClickPlayerTwoGoBtn = e => {
-  //   const [message, score] = returnResultOfRPS(this.state.playerOnePick, this.state.playerTwoPick)
-  //   this.setState({
-  //     playerTwoGoBtn: true,
-  //     playerOneVisible: true,
-  //     resultMessage: message
-  //   })
-  //   this.addScore(score)
-  // }
-
-  // onClickPlayerTwoRandomBtn = e => {
-  //   let randomItem = this.randomPick()
-  //   const [message, score] = returnResultOfRPS(this.state.playerOnePick, randomItem)
-  //   this.setState({
-  //     playerTwoPick: randomItem,
-  //     playerTwoGoBtn: true,
-  //     playerOneVisible: true,
-  //     resultMessage: message
-  //   })
-  //   this.addScore(score)
   // }
 
   // onClickPlayAgainBtn = e => {
@@ -68,8 +44,6 @@ const App = () => {
   //   })
   // }
 
-  // let resultMessage;
-  // this.state.playerTwoGoBtn ? resultMessage = this.state.resultMessage : resultMessage = ""
 
   return (
     <>
@@ -84,21 +58,14 @@ const App = () => {
             <Grid.Column width={8}>
               <PlayerOne />
             </Grid.Column>
-            {/* <Grid.Column width={8} textAlign="center">
-              <PlayerTwo
-                playerOneGoBtn={this.state.playerOneGoBtn}
-                playerTwoPick={this.state.playerTwoPick}
-                onClickPlayerTwoItem={this.onClickPlayerTwoItem}
-                onClickPlayerTwoGoBtn={this.onClickPlayerTwoGoBtn}
-                playerTwoGoBtn={this.state.playerTwoGoBtn}
-                onClickPlayerTwoRandomBtn={this.onClickPlayerTwoRandomBtn}
-              />
+            <Grid.Column width={8} textAlign="center">
+              <PlayerTwo />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
             <h1 id="result-message">{resultMessage}</h1>
           </Grid.Row>
-          <Grid.Row centered>
+          {/* <Grid.Row centered>
             <PlayAgainBtn
               playerTwoGoBtn={this.state.playerTwoGoBtn}
               onClickPlayAgainBtn={this.onClickPlayAgainBtn}
@@ -106,8 +73,8 @@ const App = () => {
             <RestartBtn
               playerTwoGoBtn={this.state.playerTwoGoBtn}
               onClickRestartBtn={this.onClickRestartBtn}
-            /> */}
-          </Grid.Row>
+            />
+          </Grid.Row> */}
         </Grid>
       </div>
       <Footer />

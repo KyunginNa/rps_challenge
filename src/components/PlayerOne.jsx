@@ -19,7 +19,7 @@ const PlayerOne = () => {
         }}>
         Player 1
       </Header>
-      <div id="player1-board">
+      <div id="player1-board" data-cy="player1-board">
         {playerOneVisible && (
           <Grid
             columns={3}

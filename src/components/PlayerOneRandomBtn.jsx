@@ -6,7 +6,7 @@ import { Button } from 'semantic-ui-react'
 const PlayerOneRandomBtn = () => {
   const playerOneGoBtn = useSelector(state => state.playerOneGoBtn)
   const dispatch = useDispatch()
-  let randomItem = randomPick()
+  const randomItem = randomPick()
   return (
     <Button
       disabled={playerOneGoBtn === true ? true : false}

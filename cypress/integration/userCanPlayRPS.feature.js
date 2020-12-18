@@ -57,9 +57,9 @@ describe("Rock Paper Scissors game", () => {
     });
 
     it("Redisplays player1's board", () => {
-      cy.get("button#player2-rock").click();
+      cy.get("button#player2-paper").click();
       cy.get("button#player2-go").click();
-      cy.get("#player1-board").should("be.visible");
+      cy.get("[data-cy='player1-board']").should("be.visible");
     });
   });
 
