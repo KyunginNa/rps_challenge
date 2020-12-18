@@ -27,7 +27,6 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         playerTwoPick: action.payload,
       };
-
     case "PLAYER_TWO_GO":
       if (action.payload.score === 1) {
         return {
@@ -44,6 +43,13 @@ const rootReducer = (state = initialState, action) => {
           playerOneVisible: true,
           resultMessage: action.payload.message,
           playerTwoScore: state.playerTwoScore + 1,
+        };
+      } else {
+        return {
+          ...state,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
         };
       }
       break;
@@ -65,6 +71,14 @@ const rootReducer = (state = initialState, action) => {
           playerOneVisible: true,
           resultMessage: action.payload.message,
           playerTwoScore: state.playerTwoScore + 1,
+        };
+      } else {
+        return {
+          ...state,
+          playerTwoPick: action.payload.playerTwoPick,
+          playerTwoGoBtn: true,
+          playerOneVisible: true,
+          resultMessage: action.payload.message,
         };
       }
       break;

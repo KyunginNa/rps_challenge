@@ -7,18 +7,10 @@ import PlayerOne from './components/PlayerOne'
 import PlayerTwo from './components/PlayerTwo'
 // import PlayAgainBtn from './components/PlayAgainBtn'
 // import RestartBtn from './components/RestartBtn'
-// import Score from './components/Score'
+import Score from './components/Score'
 
 const App = () => {
   let resultMessage = useSelector(state => state.resultMessage)
-
-  // addScore = (score) => {
-  //   if (score === 1) {
-  //     this.setState({ playerOneScore: (this.state.playerOneScore + 1) })
-  //   } else if (score === 2) {
-  //     this.setState({ playerTwoScore: (this.state.playerTwoScore + 1) })
-  //   }
-  // }
 
   // onClickPlayAgainBtn = e => {
   //   this.setState({
@@ -49,10 +41,7 @@ const App = () => {
     <>
       <Header />
       <div id="div-main">
-        {/* <Score
-          playerOneScore={this.state.playerOneScore}
-          playerTwoScore={this.state.playerTwoScore}
-        /> */}
+        <Score />
         <Grid id="game-board">
           <Grid.Row>
             <Grid.Column width={8}>
