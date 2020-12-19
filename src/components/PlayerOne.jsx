@@ -25,7 +25,7 @@ const PlayerOne = () => {
             columns={3}
             relaxed
             textAlign="center">
-            <Grid.Row id="player1-rps">
+            <Grid.Row className="player-rps">
               <PlayerOneRpsBtns />
             </Grid.Row>
             <Grid.Row>

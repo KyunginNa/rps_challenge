@@ -23,7 +23,7 @@ footer {
   font-family: monospace;
 }
 
-#div-main {
+.div-main {
   background-image: url(https://images.unsplash.com/photo-1599148400620-8e1ff0bf28d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1482&q=80);
   background-position: center;
   background-size: cover;
@@ -32,15 +32,11 @@ footer {
   margin-top: -5.5em;
 }
 
-#game-board {
+.game-board {
   margin-top: 2em;
 }
 
-#player1-rps {
-  margin-top: 2em;
-}
-
-#player2-rps {
+.player-rps {
   margin-top: 2em;
 }
 

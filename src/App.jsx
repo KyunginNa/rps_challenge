@@ -14,9 +14,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <div id="div-main">
+      <div className="div-main">
         <Score />
-        <Grid id="game-board">
+        <Grid classNam="game-board">
           <Grid.Row>
             <Grid.Column width={8}>
               <PlayerOne />
