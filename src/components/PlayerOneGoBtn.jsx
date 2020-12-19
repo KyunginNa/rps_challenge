@@ -10,7 +10,7 @@ const PlayerOneGoBtn = () => {
     <>
       <Button
         disabled={playerOnePick && !playerOneGoBtn ? false : true}
-        id="player1-go"
+        data-cy="player1-go"
         inverted
         size="big"
         onClick={() => dispatch({ type: "PLAYER_ONE_GO" })}

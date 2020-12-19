@@ -26,7 +26,11 @@ const App = () => {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-            <h1 id="result-message">{resultMessage}</h1>
+            <h1
+              data-cy="result-message"
+              className="result-message"
+            >{resultMessage}
+            </h1>
           </Grid.Row>
           <Grid.Row centered>
             <PlayAgainBtn />

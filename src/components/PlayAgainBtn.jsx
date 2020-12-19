@@ -10,7 +10,7 @@ const PlayAgainBtn = () => {
       { playerTwoGoBtn &&
         (
           <Button
-            id="play-again"
+            data-cy="play-again"
             inverted
             size="big"
             onClick={() => dispatch({ type: "PLAY_AGAIN" })}

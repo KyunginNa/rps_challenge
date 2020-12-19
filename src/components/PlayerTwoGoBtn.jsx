@@ -17,7 +17,7 @@ const PlayerTwoGoBtn = () => {
     <>
       <Button
         disabled={playerTwoPick && !playerTwoGoBtn ? false : true}
-        id="player2-go"
+        data-cy="player2-go"
         inverted
         size="big"
         onClick={onClickHandler}

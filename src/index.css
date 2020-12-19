@@ -28,7 +28,7 @@ footer {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 800px;
+  height: 1000px;
   margin-top: -5.5em;
 }
 
@@ -50,7 +50,7 @@ footer {
   margin-top: 2em;
 }
 
-#result-message {
+.result-message {
   margin-top: 0.5em;
   font-family: monospace;
   color: aliceblue;
