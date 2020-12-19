@@ -10,7 +10,7 @@ const RestartBtn = () => {
       { playerTwoGoBtn &&
         (
           <Button
-            id="restart"
+            data-cy="restart"
             inverted
             size="big"
             onClick={() => dispatch({ type: "RESTART" })}

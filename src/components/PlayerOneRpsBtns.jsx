@@ -13,7 +13,7 @@ const PlayerOneRpsBtns = () => {
           disabled={playerOneGoBtn === true ? true : false}
           active={playerOnePick === "rock"}
           name="rock"
-          id="player1-rock"
+          data-cy="player1-rock"
           onClick={() => dispatch({ type: "PLAYER_ONE_PICK", payload: "rock" })}
           icon
           inverted>
@@ -28,7 +28,7 @@ const PlayerOneRpsBtns = () => {
           disabled={playerOneGoBtn === true ? true : false}
           active={playerOnePick === "paper"}
           name="paper"
-          id="player1-paper"
+          data-cy="player1-paper"
           onClick={() => dispatch({ type: "PLAYER_ONE_PICK", payload: "paper" })}
           icon
           inverted>
@@ -43,7 +43,7 @@ const PlayerOneRpsBtns = () => {
           disabled={playerOneGoBtn === true ? true : false}
           active={playerOnePick === "scissors"}
           name="scissors"
-          id="player1-scissors"
+          data-cy="player1-scissors"
           onClick={() => dispatch({ type: "PLAYER_ONE_PICK", payload: "scissors" })}
           icon
           inverted>

@@ -10,7 +10,7 @@ const PlayerOneRandomBtn = () => {
   return (
     <Button
       disabled={playerOneGoBtn === true ? true : false}
-      id="player1-random"
+      data-cy="player1-random"
       inverted
       size="big"
       onClick={() => dispatch({ type: "PLAYER_ONE_RANDOM_PICK", payload: randomItem })}

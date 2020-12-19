@@ -13,7 +13,7 @@ const PlayerTwoRpsBtns = () => {
           disabled={playerTwoGoBtn === true ? true : false}
           active={playerTwoPick === "rock"}
           name="rock"
-          id="player2-rock"
+          data-cy="player2-rock"
           onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "rock" })}
           icon
           inverted>
@@ -28,7 +28,7 @@ const PlayerTwoRpsBtns = () => {
           disabled={playerTwoGoBtn === true ? true : false}
           active={playerTwoPick === "paper"}
           name="paper"
-          id="player2-paper"
+          data-cy="player2-paper"
           onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "paper" })}
           icon
           inverted>
@@ -43,7 +43,7 @@ const PlayerTwoRpsBtns = () => {
           disabled={playerTwoGoBtn === true ? true : false}
           active={playerTwoPick === "scissors"}
           name="scissors"
-          id="player2-scissors"
+          data-cy="player2-scissors"
           onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "scissors" })}
           icon
           inverted>

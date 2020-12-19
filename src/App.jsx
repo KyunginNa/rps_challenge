@@ -14,9 +14,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <div id="div-main">
+      <div className="div-main">
         <Score />
-        <Grid id="game-board">
+        <Grid classNam="game-board">
           <Grid.Row>
             <Grid.Column width={8}>
               <PlayerOne />
@@ -26,7 +26,11 @@ const App = () => {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row centered>
-            <h1 id="result-message">{resultMessage}</h1>
+            <h1
+              data-cy="result-message"
+              className="result-message"
+            >{resultMessage}
+            </h1>
           </Grid.Row>
           <Grid.Row centered>
             <PlayAgainBtn />

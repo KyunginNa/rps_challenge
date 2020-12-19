@@ -17,7 +17,7 @@ const PlayerTwoRandomBtn = () => {
   return (
     <Button
       disabled={playerTwoGoBtn === true ? true : false}
-      id="player2-random"
+      data-cy="player2-random"
       inverted
       size="big"
       onClick={onClickHandler}

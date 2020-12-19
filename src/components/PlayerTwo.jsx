@@ -10,7 +10,7 @@ const PlayerTwo = () => {
   return (
     <>
       <Header
-        id="player2-header"
+        data-cy="player2-header"
         textAlign="center"
         style={{
           fontFamily: "monospace",
@@ -19,13 +19,13 @@ const PlayerTwo = () => {
         }}>
         Player 2
       </Header>
-      <div id="player2-board">
+      <div data-cy="player2-board">
         {playerOneGoBtn && (
           <Grid
             columns={3}
             relaxed
             textAlign="center">
-            <Grid.Row id="player2-rps">
+            <Grid.Row className="player-rps">
               <PlayerTwoRpsBtns />
             </Grid.Row>
             <Grid.Row>
