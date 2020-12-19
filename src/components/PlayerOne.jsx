@@ -10,7 +10,7 @@ const PlayerOne = () => {
   return (
     <>
       <Header
-        id="player-header"
+        data-cy="player-header"
         textAlign="center"
         style={{
           fontFamily: "monospace",

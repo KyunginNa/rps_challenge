@@ -4,7 +4,7 @@ import { Segment } from "semantic-ui-react"
 const Header = () => {
   return (
     <Segment
-      id="header"
+      data-cy="header"
       size="medium"
       inverted color="teal"
       vertical
