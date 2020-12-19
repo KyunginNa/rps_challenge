@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { returnResultOfRPS } from "../helpers/rpsHelper";
-import randomPick from "../helpers/randomPick";
-import { Button } from "semantic-ui-react";
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { returnResultOfRPS } from "../helpers/rpsHelper"
+import randomPick from "../helpers/randomPick"
+import { Button } from "semantic-ui-react"
 
 const PlayerTwoRandomBtn = () => {
   const playerOnePick = useSelector(state => state.playerOnePick)

@@ -1,6 +1,6 @@
 import React from "react"
-import { useSelector, useDispatch } from "react-redux";
-import randomPick from "../helpers/randomPick";
+import { useSelector, useDispatch } from "react-redux"
+import randomPick from "../helpers/randomPick"
 import { Button } from "semantic-ui-react"
 
 const PlayerOneRandomBtn = () => {

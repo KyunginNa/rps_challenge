@@ -22,11 +22,13 @@ const rootReducer = (state = initialState, action) => {
         playerOneGoBtn: true,
         playerOneVisible: false,
       };
+
     case "PLAYER_TWO_PICK":
       return {
         ...state,
         playerTwoPick: action.payload,
       };
+
     case "PLAYER_TWO_GO":
       if (action.payload.score === 1) {
         return {
@@ -52,7 +54,9 @@ const rootReducer = (state = initialState, action) => {
           resultMessage: action.payload.message,
         };
       }
+
       break;
+
     case "PLAYER_TWO_RANDOM":
       if (action.payload.score === 1) {
         return {
@@ -81,15 +85,19 @@ const rootReducer = (state = initialState, action) => {
           resultMessage: action.payload.message,
         };
       }
+
       break;
+
     case "PLAY_AGAIN":
       return {
         ...initialState,
         playerOneScore: state.playerOneScore,
         playerTwoScore: state.playerTwoScore,
       };
+
     case "RESTART":
       return initialState;
+
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import React from "react"
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
 import PlayerTwoRpsBtns from "./PlayerTwoRpsBtns"
 import PlayerTwoGoBtn from "./PlayerTwoGoBtn"
 import PlayerTwoRandomBtn from "./PlayerTwoRandomBtn"

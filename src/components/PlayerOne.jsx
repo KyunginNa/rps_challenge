@@ -2,7 +2,7 @@ import React from "react"
 import PlayerOneRpsBtns from "./PlayerOneRpsBtns"
 import PlayerOneGoBtn from "./PlayerOneGoBtn"
 import PlayerOneRandomBtn from "./PlayerOneRandomBtn"
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux"
 import { Header, Grid } from "semantic-ui-react"
 
 const PlayerOne = () => {
