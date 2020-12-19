@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react"
 import { useSelector, useDispatch } from "react-redux";
-import { Grid, Button, Icon } from 'semantic-ui-react'
+import { Grid, Button, Icon } from "semantic-ui-react"
 
 const PlayerTwoRpsBtns = () => {
   const playerTwoPick = useSelector(state => state.playerTwoPick)
@@ -14,7 +14,7 @@ const PlayerTwoRpsBtns = () => {
           active={playerTwoPick === "rock"}
           name="rock"
           id="player2-rock"
-          onClick={() => dispatch({ type: 'PLAYER_TWO_PICK', payload: 'rock' })}
+          onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "rock" })}
           icon
           inverted>
           <Icon
@@ -29,7 +29,7 @@ const PlayerTwoRpsBtns = () => {
           active={playerTwoPick === "paper"}
           name="paper"
           id="player2-paper"
-          onClick={() => dispatch({ type: 'PLAYER_TWO_PICK', payload: 'paper' })}
+          onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "paper" })}
           icon
           inverted>
           <Icon
@@ -44,7 +44,7 @@ const PlayerTwoRpsBtns = () => {
           active={playerTwoPick === "scissors"}
           name="scissors"
           id="player2-scissors"
-          onClick={() => dispatch({ type: 'PLAYER_TWO_PICK', payload: 'scissors' })}
+          onClick={() => dispatch({ type: "PLAYER_TWO_PICK", payload: "scissors" })}
           icon
           inverted>
           <Icon

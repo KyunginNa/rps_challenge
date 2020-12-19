@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react"
 import { useSelector } from "react-redux";
-import PlayerTwoRpsBtns from './PlayerTwoRpsBtns'
-import PlayerTwoGoBtn from './PlayerTwoGoBtn'
-import PlayerTwoRandomBtn from './PlayerTwoRandomBtn'
-import { Header, Grid } from 'semantic-ui-react'
+import PlayerTwoRpsBtns from "./PlayerTwoRpsBtns"
+import PlayerTwoGoBtn from "./PlayerTwoGoBtn"
+import PlayerTwoRandomBtn from "./PlayerTwoRandomBtn"
+import { Header, Grid } from "semantic-ui-react"
 
 const PlayerTwo = () => {
   const playerOneGoBtn = useSelector(state => state.playerOneGoBtn)

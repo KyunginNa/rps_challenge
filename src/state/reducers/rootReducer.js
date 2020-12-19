@@ -82,6 +82,14 @@ const rootReducer = (state = initialState, action) => {
         };
       }
       break;
+    case "PLAY_AGAIN":
+      return {
+        ...initialState,
+        playerOneScore: state.playerOneScore,
+        playerTwoScore: state.playerTwoScore,
+      };
+    case "RESTART":
+      return initialState;
     default:
       return state;
   }
