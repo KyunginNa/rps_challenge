@@ -32,12 +32,6 @@ footer {
   margin-top: -5.5em;
 }
 
-#current-score {
-  padding-top: 9em;
-  margin-bottom: -1em;
-  display: block;
-}
-
 #game-board {
   margin-top: 2em;
 }
