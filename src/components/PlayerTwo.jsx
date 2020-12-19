@@ -1,14 +1,16 @@
-import React from 'react'
-import PlayerTwoRpsBtns from './PlayerTwoRpsBtns'
-import PlayerTwoGoBtn from './PlayerTwoGoBtn'
-import PlayerTwoRandomBtn from './PlayerTwoRandomBtn'
-import { Header, Grid } from 'semantic-ui-react'
+import React from "react"
+import { useSelector } from "react-redux"
+import PlayerTwoRpsBtns from "./PlayerTwoRpsBtns"
+import PlayerTwoGoBtn from "./PlayerTwoGoBtn"
+import PlayerTwoRandomBtn from "./PlayerTwoRandomBtn"
+import { Header, Grid } from "semantic-ui-react"
 
-const PlayerTwo = ({ playerOneGoBtn, playerTwoPick, onClickPlayerTwoItem, onClickPlayerTwoGoBtn, playerTwoGoBtn, onClickPlayerTwoRandomBtn }) => {
+const PlayerTwo = () => {
+  const playerOneGoBtn = useSelector(state => state.playerOneGoBtn)
   return (
     <>
       <Header
-        id="player2-header"
+        data-cy="player2-header"
         textAlign="center"
         style={{
           fontFamily: "monospace",
@@ -17,28 +19,20 @@ const PlayerTwo = ({ playerOneGoBtn, playerTwoPick, onClickPlayerTwoItem, onClic
         }}>
         Player 2
       </Header>
-      <div id="player2-board">
+      <div data-cy="player2-board">
         {playerOneGoBtn && (
           <Grid
             columns={3}
             relaxed
             textAlign="center">
-            <Grid.Row id="player2-rps">
-              <PlayerTwoRpsBtns
-                playerTwoPick={playerTwoPick}
-                onClickHandler={onClickPlayerTwoItem}
-                playerTwoGoBtn={playerTwoGoBtn} />
+            <Grid.Row className="player-rps">
+              <PlayerTwoRpsBtns />
             </Grid.Row>
             <Grid.Row>
-              <PlayerTwoGoBtn
-                playerTwoPick={playerTwoPick}
-                onClickHandler={onClickPlayerTwoGoBtn}
-                playerTwoGoBtn={playerTwoGoBtn} />
+              <PlayerTwoGoBtn />
             </Grid.Row>
             <Grid.Row>
-              <PlayerTwoRandomBtn
-                playerTwoGoBtn={playerTwoGoBtn}
-                onClickHandler={onClickPlayerTwoRandomBtn} />
+              <PlayerTwoRandomBtn />
             </Grid.Row>
           </Grid>
         )}

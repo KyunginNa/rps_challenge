@@ -1,16 +1,19 @@
-import React from 'react'
-import { Button } from 'semantic-ui-react'
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { Button } from "semantic-ui-react"
 
-const RestartBtn = ({ playerTwoGoBtn, onClickRestartBtn }) => {
+const RestartBtn = () => {
+  const playerTwoGoBtn = useSelector(state => state.playerTwoGoBtn)
+  const dispatch = useDispatch()
   return (
     <>
       { playerTwoGoBtn &&
         (
           <Button
-            id="restart"
+            data-cy="restart"
             inverted
             size="big"
-            onClick={onClickRestartBtn}
+            onClick={() => dispatch({ type: "RESTART" })}
             style={{
               fontFamily: "monospace",
               foniSize: 19

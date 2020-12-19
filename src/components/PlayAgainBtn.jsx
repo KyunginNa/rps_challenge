@@ -1,16 +1,19 @@
-import React from 'react'
-import { Button } from 'semantic-ui-react'
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { Button } from "semantic-ui-react"
 
-const PlayAgainBtn = ({ playerTwoGoBtn, onClickPlayAgainBtn }) => {
+const PlayAgainBtn = () => {
+  const playerTwoGoBtn = useSelector(state => state.playerTwoGoBtn)
+  const dispatch = useDispatch()
   return (
     <>
       { playerTwoGoBtn &&
         (
           <Button
-            id="play-again"
+            data-cy="play-again"
             inverted
             size="big"
-            onClick={onClickPlayAgainBtn}
+            onClick={() => dispatch({ type: "PLAY_AGAIN" })}
             style={{
               fontFamily: "monospace",
               foniSize: 19

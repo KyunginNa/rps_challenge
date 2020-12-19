@@ -1,14 +1,16 @@
-import React from 'react'
-import PlayerOneRpsBtns from './PlayerOneRpsBtns'
-import PlayerOneGoBtn from './PlayerOneGoBtn'
-import PlayerOneRandomBtn from './PlayerOneRandomBtn'
-import { Header, Grid } from 'semantic-ui-react'
+import React from "react"
+import PlayerOneRpsBtns from "./PlayerOneRpsBtns"
+import PlayerOneGoBtn from "./PlayerOneGoBtn"
+import PlayerOneRandomBtn from "./PlayerOneRandomBtn"
+import { useSelector } from "react-redux"
+import { Header, Grid } from "semantic-ui-react"
 
-const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn, playerOneGoBtn, playerOneVisible, onClickPlayerOneRandomBtn }) => {
+const PlayerOne = () => {
+  const playerOneVisible = useSelector(state => state.playerOneVisible)
   return (
     <>
       <Header
-        id="player-header"
+        data-cy="player-header"
         textAlign="center"
         style={{
           fontFamily: "monospace",
@@ -17,28 +19,20 @@ const PlayerOne = ({ playerOnePick, onClickPlayerOneItem, onClickPlayerOneGoBtn,
         }}>
         Player 1
       </Header>
-      <div id="player1-board">
+      <div data-cy="player1-board">
         {playerOneVisible && (
           <Grid
             columns={3}
             relaxed
             textAlign="center">
-            <Grid.Row id="player1-rps">
-              <PlayerOneRpsBtns
-                playerOnePick={playerOnePick}
-                onClickHandler={onClickPlayerOneItem}
-                playerOneGoBtn={playerOneGoBtn} />
+            <Grid.Row className="player-rps">
+              <PlayerOneRpsBtns />
             </Grid.Row>
             <Grid.Row>
-              <PlayerOneGoBtn
-                playerOnePick={playerOnePick}
-                onClickHandler={onClickPlayerOneGoBtn}
-                playerOneGoBtn={playerOneGoBtn} />
+              <PlayerOneGoBtn />
             </Grid.Row>
             <Grid.Row>
-              <PlayerOneRandomBtn
-                playerOneGoBtn={playerOneGoBtn}
-                onClickHandler={onClickPlayerOneRandomBtn} />
+              <PlayerOneRandomBtn />
             </Grid.Row>
           </Grid>
         )}
