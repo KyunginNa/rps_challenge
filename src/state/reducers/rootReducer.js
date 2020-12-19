@@ -55,8 +55,6 @@ const rootReducer = (state = initialState, action) => {
         };
       }
 
-      break;
-
     case "PLAYER_TWO_RANDOM":
       if (action.payload.score === 1) {
         return {
@@ -85,8 +83,6 @@ const rootReducer = (state = initialState, action) => {
           resultMessage: action.payload.message,
         };
       }
-
-      break;
 
     case "PLAY_AGAIN":
       return {
